@@ -25,6 +25,8 @@
   "dozamigos.empty.error.hint": "Check manifestUrl in config/dozamigos-client.toml",
   "dozamigos.popup.title": "Pack update available",
   "dozamigos.popup.line": "+%s added   ~%s updated   -%s removed",
+  "dozamigos.popup.mods": "Mods",
+  "dozamigos.popup.files": "Configs",
   "dozamigos.popup.hint": "Restart after applying.",
   "dozamigos.popup.open": "Open updater",
   "dozamigos.popup.later": "Later",

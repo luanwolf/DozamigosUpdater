@@ -48,6 +48,10 @@ public final class UpdateDiffSelfCheck {
         assertEq(2L, plan.count(ChangeKind.ADDED), "added");
         assertEq(2L, plan.count(ChangeKind.UPDATED), "updated");
         assertEq(2L, plan.count(ChangeKind.REMOVED), "removed");
+        assertEq(1L, plan.count(ChangeKind.ADDED, FileKind.MOD), "added mods");
+        assertEq(1L, plan.count(ChangeKind.ADDED, FileKind.FILE), "added files");
+        assertEq(1L, plan.count(ChangeKind.REMOVED, FileKind.MOD), "removed mods");
+        assertEq(1L, plan.count(ChangeKind.REMOVED, FileKind.FILE), "removed files");
 
         long fileChanges = plan.changes().stream().filter(c -> c.target() == FileKind.FILE).count();
         assertEq(3L, fileChanges, "file changes");
