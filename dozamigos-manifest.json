@@ -1,5 +1,5 @@
 {
-  "packVersion": "1.0.0",
+  "packVersion": "1.0.1",
   "mods": [
     {
       "id": "additional_lights",
@@ -1455,9 +1455,9 @@
     },
     {
       "id": "tempadwithshaders",
-      "file": "tempadwithshaders-1.20.1-1.0.0.jar",
-      "sha256": "680c38773b9375c542beade524a449e139b3d055eda0042f8dd3d6941853ae34",
-      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/tempadwithshaders-1.20.1-1.0.0.jar"
+      "file": "tempadwithshaders-1.20.1-1.0.1.jar",
+      "sha256": "4504f13566f167b5ce2a36d4f60c5d3aed03a4e7b3831f96d0c0fc57802779de",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/tempadwithshaders-1.20.1-1.0.1.jar"
     },
     {
       "id": "tenshilib-1.20.1-1.7.6",
