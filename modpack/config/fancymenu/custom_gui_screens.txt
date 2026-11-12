@@ -1,0 +1,15 @@
+type = custom_gui_screens
+
+overridden_screens {
+  title_screen = qsmp
+}
+
+custom_gui {
+  identifier = updater
+  title = {"placeholder":"mpuc:current-modpack-version"}
+  allow_esc = true
+  transparent_world_background = true
+  transparent_world_background_overlay = true
+  pause_game = true
+}
+

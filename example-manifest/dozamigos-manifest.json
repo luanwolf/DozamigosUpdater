@@ -1,0 +1,25 @@
+{
+  "packVersion": "1.0.0",
+  "mods": [
+    {
+      "id": "example-mod",
+      "file": "example-mod-1.0.0.jar",
+      "sha256": "REPLACE_WITH_REAL_SHA256",
+      "url": "https://github.com/SEU_USER/SEU_REPO/releases/download/v1.0.0/example-mod-1.0.0.jar"
+    }
+  ],
+  "files": [
+    {
+      "id": "options-txt",
+      "path": "options.txt",
+      "sha256": "REPLACE_WITH_REAL_SHA256",
+      "url": "https://raw.githubusercontent.com/SEU_USER/SEU_REPO/main/options.txt"
+    },
+    {
+      "id": "config-example",
+      "path": "config/examplemod.toml",
+      "sha256": "REPLACE_WITH_REAL_SHA256",
+      "url": "https://raw.githubusercontent.com/SEU_USER/SEU_REPO/main/config/examplemod.toml"
+    }
+  ]
+}

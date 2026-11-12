@@ -1,0 +1,14 @@
+# Pastas e arquivos do game dir que entram no sync automatico (alem de mods/).
+# Um path por linha, relativo a pasta da instance.
+
+config
+emotes
+fancymenu_data
+journeymap
+local
+mod_data
+resourcepacks
+shaderpacks
+options.txt
+servers.dat
+icon.png

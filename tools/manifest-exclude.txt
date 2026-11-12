@@ -1,0 +1,14 @@
+# Um padrao por linha (wildcard). Arquivos que casarem NAO entram no manifest.
+
+dozamigos-*.jar
+*disabled*
+*.jar.disabled
+config/dozamigos/*
+config/dozamigos-client.toml
+*.log
+*.bak
+*.tmp
+*.lock
+usernamecache.json
+usercache.json
+minecraftinstance.json

@@ -1,0 +1,3 @@
+# Se dois jars gerarem o mesmo id, force aqui:
+# nome-do-arquivo-sem-.jar = id-desejado
+# alexsmobs-1.22.8 = alexsmobs

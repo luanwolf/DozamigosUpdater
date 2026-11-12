@@ -1,0 +1,10 @@
+{
+    "screen.uncrafter.uncrafter_inventory": "Bancada de Destrabalho",
+    "screen.uncrafter.advanced_uncrafter_inventory": "Bancada de Destrabalho Avançado",
+    "block.uncrafter.uncrafter": "Bancada de Destrabalho",
+    "block.uncrafter.advanced_uncrafter": "Bancada de Destrabalho Avançado",
+    "uncrafter.config.extract_amount": "Quantidade de extração do Bancada de Destrabalho",
+    "uncrafter.config.advanced_extract_amount": "Quantidade de extração do Bancada de Destrabalho Avançado",
+    "uncrafter.config.enchantment_extract_amount": "Quantidade de extração de encantamentos",
+    "uncrafter.config.minimum_level_for_enchantments": "Nível mínimo para encantamentos"
+}

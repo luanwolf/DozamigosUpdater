@@ -1,0 +1,17 @@
+{
+  "itemcollectors.block.basic_collector": "Coletor Básico de Itens",
+  "itemcollectors.basic_collector.info": "Pode recolher itens em uma área ao seu redor",
+  "itemcollectors.basic_collector.info.range": "Alcance: %s blocos",
+  "itemcollectors.block.advanced_collector": "Coletor Avançado de Itens",
+  "itemcollectors.advanced_collector.info": "Pode recolher itens em uma área ao seu redor, os itens podem ser filtrados",
+  "gui.itemcollectors.basic_collector.range": "Alcance (%1$dx%2$dx%3$d)",
+  "gui.itemcollectors.basic_collector.range.increase": "Aumentar Alcance",
+  "gui.itemcollectors.basic_collector.range.decrease": "Diminuir Alcance",
+  "gui.itemcollectors.advanced_collector.whitelist.on": "Lista Branca",
+  "gui.itemcollectors.advanced_collector.whitelist.off": "Lista Negra",
+  "gui.itemcollectors.advanced_collector.durability.on": "Correspondência NBT",
+  "gui.itemcollectors.advanced_collector.durability.off": "Ignorar NBT",
+  "gui.itemcollectors.advanced_collector.filter": "Filtro",
+  "gui.itemcollectors.advanced_collector.show_area.on": "Mostrar Alcance",
+  "gui.itemcollectors.advanced_collector.show_area.off": "Esconder Alcance"
+}

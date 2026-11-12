@@ -1,0 +1,17 @@
+# Hammer Lib english translations
+
+itemGroup.hammerlib=HammerLib
+config.jade.plugin_hammerlib.root=HammerLib
+
+block.hammerlib.test_machine: Máquina de Teste
+item.hammerlib.wrench: Chave Inglesa
+item.hammerlib.gears.wooden: Engrenagem de Madeira
+item.hammerlib.gears.stone: Engrenagem de Pedra
+item.hammerlib.gears.copper: Engrenagem de Cobre
+item.hammerlib.gears.iron: Engrenagem de Ferro
+item.hammerlib.gears.gold: Engrenagem de Ouro
+item.hammerlib.gears.diamond: Engrenagem de Diamante
+item.hammerlib.gears.netherite: Engrenagem de Netherite
+info.hammerlib.material: Material de Fabricação
+
+key.hammerlib.render_item=[HammerLib] Render GUI Item

@@ -1,0 +1,24 @@
+{
+  "id": "Drakredzur_1407-66-1087",
+  "name": "Drakredzur",
+  "groupName": ":Waystones",
+  "displayId": "79de1669-b3c5-4bee-a07b-46915fec97d2",
+  "icon": "journeymap:ui/img/waypoint-icon.png",
+  "colorizedIcon": "fake:color--1-waypoint-icon.png",
+  "x": 1407,
+  "y": 66,
+  "z": -1087,
+  "r": 255,
+  "g": 255,
+  "b": 255,
+  "enable": true,
+  "type": "Normal",
+  "origin": "waystones",
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "persistent": true,
+  "showDeviation": false,
+  "iconColor": -1,
+  "customIconColor": false
+}

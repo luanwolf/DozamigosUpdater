@@ -1,0 +1,16 @@
+#URL do manifest JSON do pack (raw GitHub, release asset, Pages, etc.).
+#Exemplo: https://raw.githubusercontent.com/SEU_USER/SEU_REPO/main/dozamigos-manifest.json
+manifestUrl = ""
+#Token GitHub opcional (repos privados / rate limit). Deixe vazio se publico.
+githubToken = ""
+#Checa atualizacoes ao abrir o menu principal e mostra popup se houver mudanca.
+checkOnTitleScreen = true
+#Mostra botao Dozamigos no Title Screen vanilla (FancyMenu pode esconder; use a action/comando).
+showTitleButton = false
+#Timeout de conexao HTTP em ms.
+#Range: 1000 ~ 120000
+connectTimeoutMs = 15000
+#Timeout de leitura HTTP em ms.
+#Range: 1000 ~ 600000
+readTimeoutMs = 120000
+

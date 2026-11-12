@@ -1,0 +1,17 @@
+---
+description: Convencoes do mod Dozamigos (updater de modpack Forge 1.20.1)
+globs: dozamigos/**
+alwaysApply: false
+---
+
+# Dozamigos
+
+- Minecraft 1.20.1 / Forge 47.1.47, **client-only** (`displayTest=IGNORE_ALL_VERSION`, sem hooks de server).
+- Sync via `dozamigos-manifest.json` (URL em `config/dozamigos-client.toml`).
+- Secoes: `mods[]` + `files[]` (qualquer path relativo: config, resourcepacks, options.txt, etc.).
+- Includes padrao em `tools/manifest-include.txt`. Diff: ADDED / UPDATED / REMOVED.
+- So arquivos em `config/dozamigos/managed.json` entram como REMOVED; arquivos manuais ficam de fora.
+- Path traversal bloqueado. Nao versionar `config/dozamigos-client.toml` / `config/dozamigos/*`.
+- FancyMenu: abrir `com.dozamigos.dozamigos.client.gui.UpdaterScreen` ou comando `/dozamigos`.
+- Depois de Aplicar, reiniciar o jogo (jars so carregam no boot; configs/files ja estao no disco).
+- Logica de diff em `UpdateDiff`; rode `gradlew selfCheck` se mexer nela.

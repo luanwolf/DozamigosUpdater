@@ -1,0 +1,81 @@
+
+itemGroup.solarflux=Solar Flux [Reborn]
+
+block.solarflux.sp_1=Painel Solar I
+block.solarflux.sp_2=Painel Solar II
+block.solarflux.sp_3=Painel Solar III
+block.solarflux.sp_4=Painel Solar IV
+block.solarflux.sp_5=Painel Solar V
+block.solarflux.sp_6=Painel Solar VI
+block.solarflux.sp_7=Painel Solar VII
+block.solarflux.sp_8=Painel Solar VIII
+
+item.solarflux.mirror=Espelho
+item.solarflux.blazing_coating=Revestimento Flamejante
+item.solarflux.emerald_glass=Video de Esmeralda
+item.solarflux.ender_glass=Vidro de Ender
+item.solarflux.photovoltaic_cell_1=Célula Fotovoltaica I
+item.solarflux.photovoltaic_cell_2=Célula Fotovoltaica II
+item.solarflux.photovoltaic_cell_3=Célula Fotovoltaica III
+item.solarflux.photovoltaic_cell_4=Célula Fotovoltaica IV
+item.solarflux.photovoltaic_cell_5=Célula Fotovoltaica V
+item.solarflux.photovoltaic_cell_6=Célula Fotovoltaica VI
+item.solarflux.blank_upgrade=Upgrade: Vazio
+item.solarflux.efficiency_upgrade=Upgrade: Eficiência
+item.solarflux.low_light_upgrade=Upgrade: Luz Baixa
+item.solarflux.traversal_upgrade=Upgrade: Máquina Transversal
+item.solarflux.transfer_rate_upgrade=Upgrade: Taxa de Transferência
+item.solarflux.capacity_upgrade=Upgrade: Capacidade
+item.solarflux.furnace_upgrade=Upgrade: Fornalha
+item.solarflux.dispersive_upgrade=Upgrade: Dispersivo
+item.solarflux.block_charging_upgrade=Upgrade: Carregamento de Bloco
+
+info.solarflux.energy.stored1=Carga: %d FE
+info.solarflux.energy.stored2=Carga: %d/%d FE
+info.solarflux.energy.generation=Geração: %d FE/tick
+info.solarflux.energy.transfer=Transferência: %d FE/tick
+info.solarflux.energy.capacity=Capacidade: %d FE
+info.solarflux.energy.efficiency=Eficiência: %d%%
+info.solarflux.sun.intensity=Nível de Luz: %d%%
+info.solarflux.upgrades.installed=Upgrades
+info.solarflux.hold.for.info=Segure %s para detalhes
+info.solarflux.shift=Shift
+info.solarflux.maximum=Máximo
+info.solarflux.contentretained=Conteúdo Retido
+info.solarflux.resetcontent=Coloque na elaboração para redefinir o conteúdo
+info.solarflux.decreasingReturnsToScale=Retornos decrescentes de escala
+info.solarflux.constantReturnsToScale=Retornos constantes de escala
+info.solarflux.increasingReturnsToScale=Retornos crescentes de escala
+info.solarflux.solar.panel.upgrade=Upgrade para painel solar
+info.solarflux.efficiency_upgrade=Aumenta a quantidade de FE gerada em %.2f%%.
+info.solarflux.upgrade.low.light=Gera mais FE em ambientes de pouca luz mas gera menos no brilho total.
+info.solarflux.traversal_upgrade=Distribui energia para máquina(s) conectada(s) no raio de %d blocos.
+info.solarflux.transfer_rate_upgrade=Aumenta a taxa de transferência em %.2f%%.
+info.solarflux.capacity_upgrade=Aumenta a capacidade interna em %.2f%%.
+info.solarflux.furnace_upgrade=Acumula energia para aquecer fornalhas vanilla.
+info.solarflux.dispersive_upgrade: Dispersa energia para jogadores próximos no alcance de %d blocos.
+info.solarflux.block_charging_upgrade: Transmite energia sem fio para um bloco especificado no alcance de %d.
+
+## AVARITIA COMPATIBILITY ##: ## COMPATIBILIDADE COM AVARITIA ##
+block.solarflux.sp_avaritia.neutronium: Painel Solar de Neutronium
+block.solarflux.sp_avaritia.infinity: Painel Solar do Infinito
+
+## DRACONIC EVOLUTION ##: ## EVOLUÇÃO DRACÔNICA ##
+block.solarflux.sp_de.wyvern: Painel Solar de Wyvern
+block.solarflux.sp_de.draconic: Painel Solar Dracônico
+block.solarflux.sp_de.chaotic: Painel Solar Caótico
+
+## TWILIGHT FOREST ##: ## FLORESTA DO CREPÚSCULO ##
+block.solarflux.sp_tf.carminite: Painel Solar de Carminita
+block.solarflux.sp_tf.fiery: Painel Solar Ardente
+
+item.solarflux.twilightforest.twilight_cell_1: Célula do Crepúsculo I
+item.solarflux.twilightforest.twilight_cell_2: Célula do Crepúsculo II
+item.solarflux.twilightforest.twilight_upgrade: Upgrade do Crepúsculo
+
+info.solarflux.twilightforest.twilight_upgrade: Aumenta ligeiramente a luz coletada pelo Painel Solar na Floresta do Crepúsculo.
+
+## APPLIED ENERGISTICS ##: ## ENERGÉTICA APLICADA ##
+item.solarflux.ae2.energy_upgrade: Upgrade de Energia AEU
+
+info.solarflux.ae2.energy_upgrade: Permite conectar o Painel Solar diretamente à Rede ME.

@@ -1,0 +1,7 @@
+type = last_world
+
+last_world {
+  is_server = true
+  world = signaling-usability.tun.ply.gg:25565
+}
+

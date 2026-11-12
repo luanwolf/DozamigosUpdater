@@ -1,0 +1,15 @@
+{
+    "tip.cardboardbox.nbt": "Tamanho NBT: %s",
+    "tip.cardboardbox.bee": "Abelhas: %s",
+    "tip.cardboardbox.bee_level": "Nível de mel: %s",
+    "tip.cardboardbox.mob": "Mob: %s",
+    "tip.cardboardbox.empty": "vazio",
+ 
+    "block.cardboardbox.crate": "Caixa de papelão",
+    "block.cardboardbox.fcrate": "Caixa Festiva",
+ 
+    "subtitle.cardboardbox.shake": "Caixa fazendo barulho",
+ 
+    "config.jade.plugin_cardboardbox.crate": "o quê"
+  }
+  

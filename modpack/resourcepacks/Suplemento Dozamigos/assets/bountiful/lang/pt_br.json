@@ -1,0 +1,86 @@
+{
+    "block.bountiful.bountyboard": "Quadro de Recompensas",
+
+    "itemGroup.bountiful": "Abundante",
+
+    "bountiful.entry.shepherd_obj_wool_wildcard": "Qualquer Lã",
+    "bountiful.entry.fletcher_obj_planks": "Qualquer Tábua",
+    "bountiful.entry.fletcher_obj_logs": "Qualquer Tronco",
+    "bountiful.entry.shepherd_obj_bed_wildcard": "Qualquer Cama",
+    "bountiful.entry.fisherman_obj_any_boat": "Qualquer Barco",
+    "bountiful.entry.mapper_obj_candles": "Qualquer Vela",
+    "bountiful.entry.shepherd_obj_banner_wildcard": "Qualquer Bandeira",
+
+    "bountiful.entry.fisherman_obj_catch_ench_book": "Pesque Livros Encantados",
+    "bountiful.entry.cleric_obj_brew_swiftness": "Prepare uma Poção de Velocidade básica",
+    "bountiful.entry.cleric_obj_cure_zombie_villager": "Cure um Aldeão Zumbi",
+
+    "bountiful.decree": "Decreto",
+    "bountiful.decrees": "Decretos",
+    "bountiful.decree.invalid": "Decreto Inválido",
+    "bountiful.decree.notset": "Leve isso para um Quadro de Recompensas!",
+
+    "bountiful.bounty.expired": "Esta recompensa expirou.",
+    "bountiful.bounty.turnin": "Complete sua recompensa clicando com o botão direito em um quadro de recompensas.",
+
+    "bountiful.advancement.bounty_taken.title": "Trabalho por Contrato",
+    "bountiful.advancement.bounty_taken.desc": "Pegue uma recompensa de um quadro de recompensas",
+
+    "bountiful.advancement.bounty_complete.title": "Pagamento Honesto por Trabalho Honesto",
+    "bountiful.advancement.bounty_complete.desc": "Complete uma recompensa!",
+
+    "bountiful.advancement.rush_order.title": "Entrega Urgente",
+    "bountiful.advancement.rush_order.desc": "Complete uma recompensa em menos de um minuto",
+
+    "bountiful.advancement.procrastinator.title": "Mestre Procrastinador",
+    "bountiful.advancement.procrastinator.desc": "Complete uma recompensa com menos de cinco segundos restantes",
+
+    "bountiful.advancement.town_crier.title": "Arauto",
+    "bountiful.advancement.town_crier.desc": "Obtenha um decreto!",
+
+    "bountiful.advancement.royal_mandate.title": "Mandato Real",
+    "bountiful.advancement.royal_mandate.desc": "Coloque um decreto em um quadro de recompensas",
+
+    "bountiful.bounty": "Recompensa",
+
+    "bountiful.decree.armorer.name": "Fabricação de Armaduras",
+    "bountiful.decree.butcher.name": "Açougueiro",
+    "bountiful.decree.chef.name": "Suprimentos do Chef",
+    "bountiful.decree.cleric.name": "Suprimentos do Clérigo",
+    "bountiful.decree.farmer.name": "Agricultura",
+    "bountiful.decree.fisherman.name": "Pesca",
+    "bountiful.decree.fletcher.name": "Fabricação de Flechas",
+    "bountiful.decree.hunting.name": "Caça de Mobs",
+    "bountiful.decree.inventor.name": "Invenções",
+    "bountiful.decree.leatherer.name": "Curtimento",
+    "bountiful.decree.librarian.name": "Bibliotecário",
+    "bountiful.decree.mapper.name": "Cartografia",
+    "bountiful.decree.mason.name": "Alvenaria",
+    "bountiful.decree.shepherd.name": "Pastor",
+    "bountiful.decree.tinker.name": "Conserto",
+    "bountiful.decree.toolsmith.name": "Fabricação de Ferramentas",
+    "bountiful.decree.invalid_decree.name": "Decreto Inválido",
+
+    "bountiful.bounty.type.entity.kills": "Abates",
+
+    "bountiful.bounty.type.experience.levels": "Níveis de Experiência",
+    "bountiful.bounty.type.experience.points": "Pontos de Experiência",
+
+    "bountiful.rarity.Common": "Comum",
+    "bountiful.rarity.Uncommon": "Incomum",
+    "bountiful.rarity.Rare": "Raro",
+    "bountiful.rarity.Epic": "Épico",
+
+    "stat.bountiful.bounties_taken": "Recompensas Pegas",
+    "stat.bountiful.bounties_done": "Recompensas Completadas (Total)",
+    "stat.bountiful.bounties_done_0": "Recompensas Completadas (Comum)",
+    "stat.bountiful.bounties_done_1": "Recompensas Completadas (Incomum)",
+    "stat.bountiful.bounties_done_2": "Recompensas Completadas (Raro)",
+    "stat.bountiful.bounties_done_3": "Recompensas Completadas (Épico)",
+
+    "bountiful.tooltip.time": "Tempo Para Completar",
+    "bountiful.tooltip.required": "Requerido",
+    "bountiful.tooltip.rewards": "Recompensas",
+    "bountiful.tooltip.expired": "Expirado",
+    "bountiful.tooltip.requirements": "Requisitos não atendidos."
+}

@@ -1,0 +1,23 @@
+{
+  "id": "Casa-do-Loan_710-65-890",
+  "name": "Casa do Loan",
+  "groupName": "Waypoints",
+  "icon": "journeymap:ui/img/waypoint-icon.png",
+  "colorizedIcon": "fake:color--3327477-waypoint-icon.png",
+  "x": 710,
+  "y": 65,
+  "z": 890,
+  "r": 205,
+  "g": 58,
+  "b": 11,
+  "enable": true,
+  "type": "Normal",
+  "origin": "journeymap",
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "persistent": true,
+  "showDeviation": false,
+  "iconColor": -1,
+  "customIconColor": false
+}

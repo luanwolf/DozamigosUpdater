@@ -1,0 +1,20 @@
+{
+  "block.editenchanting.enchantment_edit_table": "Mesa de Edição de Desencantamento",
+  "tile.container.disenchant": "Desencantar",
+  "desc.editenchanting.export": "Custo de Exportação:",
+  "desc.editenchanting.edit": "Custo de Edição:",
+  "desc.editenchanting.cost": "Custo de Desencantamento:",
+  "desc.editenchanting.experience": "%s EXP",
+  "desc.editenchanting.item": "%s %s",
+  "desc.editenchanting.enchant_slot": "Slot de Desencantamento:",
+  "desc.editenchanting.book_slot": "Atributos:",
+  "desc.editenchanting.tip": "Dica: ",
+  "desc.editenchanting.require": "Requer %s",
+  "desc.editenchanting.exp": "EXP",
+  "desc.editenchanting.shift": "[SHIFT]",
+  "desc.editenchanting.empty": "                           ",
+  "config.editenchanting.max_text_width": "110",
+  "config.editenchanting.position": "125",
+  "subtitles.block.disenchantment_table.use": "Mesa de Desencantamento utilizada",
+  "subtitles.block.disenchantment_table.page_turn": "Mesa de Desencantamento folheada"
+}
