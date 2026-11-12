@@ -6,8 +6,12 @@ emotes
 fancymenu_data
 journeymap
 local
+mod_data
+defaultconfigs
 resourcepacks
 shaderpacks
 options.txt
 servers.dat
 icon.png
+server-icon.png
+patchouli_data.json

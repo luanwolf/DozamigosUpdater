@@ -26,7 +26,7 @@
   "dozamigos.popup.title": "Dozamigos Modpack Updater",
   "dozamigos.popup.line": "+%s adicionados   ~%s atualizados   -%s removidos",
   "dozamigos.popup.mods": "Mods",
-  "dozamigos.popup.files": "Configurações",
+  "dozamigos.popup.files": "Configs",
   "dozamigos.popup.hint": "Reinicie o Minecraft depois de aplicar.",
   "dozamigos.popup.open": "Abrir atualizador",
   "dozamigos.popup.later": "Depois",

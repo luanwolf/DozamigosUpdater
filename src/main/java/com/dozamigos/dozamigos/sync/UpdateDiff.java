@@ -12,9 +12,18 @@ import java.util.function.BiConsumer;
 /**
  * Pure diff between remote manifest and local managed ownership.
  * Unmanaged local files are ignored for REMOVED.
+ * resourcepacks/ e shaderpacks/ nunca geram REMOVED — o jogador pode ter packs extras.
  */
 public final class UpdateDiff {
     private UpdateDiff() {}
+
+    static boolean isUserContentPath(String relativePath) {
+        if (relativePath == null || relativePath.isBlank()) {
+            return false;
+        }
+        String p = relativePath.replace('\\', '/').toLowerCase();
+        return p.startsWith("resourcepacks/") || p.startsWith("shaderpacks/");
+    }
 
     public static UpdatePlan compute(
             PackManifest manifest,
@@ -155,7 +164,7 @@ public final class UpdateDiff {
         }
 
         for (Map.Entry<String, String> e : ownedCopy.entrySet()) {
-            if (!remote.containsKey(e.getKey())) {
+            if (!remote.containsKey(e.getKey()) && !isUserContentPath(e.getValue())) {
                 changes.add(ModChange.removedFile(e.getKey(), e.getValue()));
             }
         }

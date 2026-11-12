@@ -56,6 +56,23 @@ public final class UpdateDiffSelfCheck {
         long fileChanges = plan.changes().stream().filter(c -> c.target() == FileKind.FILE).count();
         assertEq(3L, fileChanges, "file changes");
 
+        // resourcepacks/shaderpacks: never REMOVED even if owned + missing from manifest
+        Path rp = tmp.resolve("resourcepacks");
+        Files.createDirectories(rp);
+        Files.write(rp.resolve("user.zip"), "mine".getBytes(StandardCharsets.UTF_8));
+        Map<String, String> ownedRp = new LinkedHashMap<>();
+        ownedRp.put("user-rp", "resourcepacks/user.zip");
+        ownedRp.put("gone-cfg", "config/gone.toml");
+        PackManifest emptyFiles = new PackManifest();
+        emptyFiles.packVersion = "3.0.0";
+        emptyFiles.mods = List.of();
+        emptyFiles.files = List.of();
+        UpdatePlan keepUserPacks = UpdateDiff.compute(emptyFiles, Map.of(), ownedRp, mods, tmp);
+        assertEq(1L, keepUserPacks.count(ChangeKind.REMOVED, FileKind.FILE), "only config removed");
+        assertEq(0L, keepUserPacks.changes().stream()
+                .filter(c -> c.kind() == ChangeKind.REMOVED && UpdateDiff.isUserContentPath(c.oldFile()))
+                .count(), "no resourcepack removed");
+
         System.out.println("UpdateDiffSelfCheck OK");
     }
 

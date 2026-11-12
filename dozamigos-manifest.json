@@ -1,5 +1,5 @@
 {
-  "packVersion": "1.0.2",
+  "packVersion": "1.0.3",
   "mods": [
     {
       "id": "additional_lights",
@@ -2298,25 +2298,25 @@
     {
       "id": "config-awesomedungeon_1-properties",
       "path": "config/awesomedungeon_1.properties",
-      "sha256": "4835f8b0b0fcbc7c406004ffe1a1998c327f3d5fa1f9bfdc6fba0cb81546b76c",
+      "sha256": "864eab23916055c791a24143fd0331c47a55b5f7d094f6272fe34d1e654865a9",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/awesomedungeon_1.properties"
     },
     {
       "id": "config-awesomedungeonend_1-properties",
       "path": "config/awesomedungeonend_1.properties",
-      "sha256": "77bfe4568c897031355a512d71c079ddbc10395c4ca0015ee8bf64f6ed62887c",
+      "sha256": "a8d344a9c875e0007453cdd89aa9c08bac50417fd39ba1d96e5df1c231ef8ed0",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/awesomedungeonend_1.properties"
     },
     {
       "id": "config-awesomedungeonnether_1-properties",
       "path": "config/awesomedungeonnether_1.properties",
-      "sha256": "6f9c1e73a72c87d81dd566dccdf22bc2f52a0e4e65a6815e0442150df20850ca",
+      "sha256": "4c9bbde306d4d902b89765f7d0cf7e3f49e6b8376d8ab0024f2673c6d416155c",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/awesomedungeonnether_1.properties"
     },
     {
       "id": "config-awesomedungeonocean_1-properties",
       "path": "config/awesomedungeonocean_1.properties",
-      "sha256": "8e06b73dce740c96acc3367bb82a063a8dcbcea5fe8732e8aa598b8b6fbaf462",
+      "sha256": "eea5e62f491fc1a790082597fab21b5d2970d3943a9133bf23f37f030338dffc",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/awesomedungeonocean_1.properties"
     },
     {
@@ -2472,7 +2472,7 @@
     {
       "id": "config-bettervillage_1-properties",
       "path": "config/bettervillage_1.properties",
-      "sha256": "e87045586152472cac23f121fe249547bd765a7189a79d2b62b049e7a8dc6079",
+      "sha256": "c14740e625d9dcb9b83fa6ce10b330d2dd4719303b4e9ccf86053236426badfb",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/bettervillage_1.properties"
     },
     {
@@ -3064,24 +3064,6 @@
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/fancymenu/assets/64x.png"
     },
     {
-      "id": "config-fancymenu-assets-aaaaaaaaa-wav",
-      "path": "config/fancymenu/assets/aaaaaaaaa.wav",
-      "sha256": "95998f140c63a22481d3dc091be23d7385506502ce15c1b379015ab126a59eb5",
-      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/fancymenu/assets/aaaaaaaaa.wav"
-    },
-    {
-      "id": "config-fancymenu-assets-atualizacao-png",
-      "path": "config/fancymenu/assets/atualizacao.png",
-      "sha256": "0262ea3fd284e018afe5553d0bcd6e2560629c2080c824080e69a7bf9e46df9f",
-      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/fancymenu/assets/atualizacao.png"
-    },
-    {
-      "id": "config-fancymenu-assets-atualizacao2-png",
-      "path": "config/fancymenu/assets/atualizacao2.png",
-      "sha256": "0262ea3fd284e018afe5553d0bcd6e2560629c2080c824080e69a7bf9e46df9f",
-      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/fancymenu/assets/atualizacao2.png"
-    },
-    {
       "id": "config-fancymenu-assets-background video-mp4",
       "path": "config/fancymenu/assets/background video.mp4",
       "sha256": "e16802e5a0989c28102356a2e8e8c4d7811cf982348fb5885c48e5e95f4881b3",
@@ -3156,7 +3138,7 @@
     {
       "id": "config-fancymenu-customization-dozamigos-txt",
       "path": "config/fancymenu/customization/dozamigos.txt",
-      "sha256": "056c390cea5f9bd72cd0e01893400150ff352531175121b9fb743e38534a1778",
+      "sha256": "8f018efb418ead589e8cbeb8ad30ce0ac3f37052b70eecad638926b3d9bad581",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/fancymenu/customization/dozamigos.txt"
     },
     {
@@ -3618,7 +3600,7 @@
     {
       "id": "config-libraryferret_1-properties",
       "path": "config/libraryferret_1.properties",
-      "sha256": "e2c6dbef612b3ebfae2381e92efa9db54b316010553c75bd4b1aeec4666c9324",
+      "sha256": "9daccb230fcc937582d5112a7d1c9626cce4e9abb6f3501534af2f84636d1cce",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/libraryferret_1.properties"
     },
     {
@@ -3774,7 +3756,7 @@
     {
       "id": "config-oculus-properties",
       "path": "config/oculus.properties",
-      "sha256": "e8cc1027fb53af3f62a77fb027c28fb9a32d70d4ab4b81b84f351c1db44bb409",
+      "sha256": "830515792dc00fa5b462c816332776535c71965218d86dceb704e0d243cf76f5",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/oculus.properties"
     },
     {
@@ -4230,13 +4212,13 @@
     {
       "id": "config-sound_physics_remastered-occlusion-properties",
       "path": "config/sound_physics_remastered/occlusion.properties",
-      "sha256": "3090bd2852f71f054813444d240f29c0dd27221b39edbb2308f82dd14aa66ccc",
+      "sha256": "60a7b8e12f15590976a717aee1386b6c9f8d2c624c1b24529c2fa84924f2798a",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/sound_physics_remastered/occlusion.properties"
     },
     {
       "id": "config-sound_physics_remastered-reflectivity-properties",
       "path": "config/sound_physics_remastered/reflectivity.properties",
-      "sha256": "23a1f882cada8384ce6366041442ad05acb43ddf7b88b955542343376c0923be",
+      "sha256": "87d825494194a711e54175fa35f263016ddcc35404ab85de13bc0419610d06a5",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/sound_physics_remastered/reflectivity.properties"
     },
     {
@@ -4394,6 +4376,18 @@
       "path": "config/zeta-common.toml",
       "sha256": "b5ae0f1685b3136c29758855f06e1eb4fa9878ef78d25b7adcbcd88391074c86",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/zeta-common.toml"
+    },
+    {
+      "id": "defaultconfigs-ftblibrary-ftblibrary-client-snbt",
+      "path": "defaultconfigs/ftblibrary/ftblibrary-client.snbt",
+      "sha256": "d9370c264daed232a167d23424db1d1ae8c01ac00377700fdd345a8a1b7afd75",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/defaultconfigs/ftblibrary/ftblibrary-client.snbt"
+    },
+    {
+      "id": "defaultconfigs-gag-gag-snbt",
+      "path": "defaultconfigs/gag/gag.snbt",
+      "sha256": "183c621a6359225ca1e8d4f4dfbd2ab7b4d5a9c43e57b8700e8b4389f9c7f3df",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/defaultconfigs/gag/gag.snbt"
     },
     {
       "id": "emotes-abdominal flexion-json",
@@ -5268,7 +5262,7 @@
     {
       "id": "fancymenu_data-last_world-fmdata",
       "path": "fancymenu_data/last_world.fmdata",
-      "sha256": "5a5663e11959fe7648eab51c74c2844f4b165c60d685a1fbd680df84526df8fb",
+      "sha256": "ef81b45fd44f3316736cfbeda9d226311d49be673ac2b58313e15204b9e6b8f1",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/fancymenu_data/last_world.fmdata"
     },
     {
@@ -5292,7 +5286,7 @@
     {
       "id": "journeymap-config-5-9-journeymap-minimap-config",
       "path": "journeymap/config/5.9/journeymap.minimap.config",
-      "sha256": "932efadfc52561817eb27544947cd4d70c69499c22e1d49a651f75c7a1656574",
+      "sha256": "5ac6bede206e39f097f9701bc00453f379d91b446d489d18fe14cf7d4adf643d",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.minimap.config"
     },
     {
@@ -8488,10 +8482,40 @@
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/local/ftblibrary-client.snbt"
     },
     {
+      "id": "mod_data-gml-1-20-1-official-txt",
+      "path": "mod_data/gml/1.20.1/official.txt",
+      "sha256": "67bfc33ef0c7103f002d6ac134f8eddd3d67e2ce45d266e83816d1a2e2c9b01d",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mod_data/gml/1.20.1/official.txt"
+    },
+    {
+      "id": "mod_data-gml-1-20-1-readme",
+      "path": "mod_data/gml/1.20.1/README",
+      "sha256": "880a787f5b06b15a94e4b83b8c6d2fabf6bdd22269df2d6b9b887393140d8f9f",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mod_data/gml/1.20.1/README"
+    },
+    {
+      "id": "mod_data-gml-1-20-1-srg-zip",
+      "path": "mod_data/gml/1.20.1/srg.zip",
+      "sha256": "f46d1050d8bed9046886b90a0d2fb80b4c6b5120fc35d32e5d37498dbe0a6d2a",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mod_data/gml/1.20.1/srg.zip"
+    },
+    {
+      "id": "mod_data-gml-1-20-1-version-json",
+      "path": "mod_data/gml/1.20.1/version.json",
+      "sha256": "500f840fdeb278c4dbd1753db7ab33ab561df9d12cb5659a913099473b75b7e6",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mod_data/gml/1.20.1/version.json"
+    },
+    {
       "id": "options-txt",
       "path": "options.txt",
-      "sha256": "b1ad0cbb28d4fa3fe54b9236c895ee29f3f3d1109cfdb424f6adb7e39196339f",
+      "sha256": "ce0f5a18eddebcce20d02b37d8a92770eecf3c52a3edd498f8049ac4844ef72a",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/options.txt"
+    },
+    {
+      "id": "patchouli_data-json",
+      "path": "patchouli_data.json",
+      "sha256": "0d6f8bff5d59d58e2ddda36b742394251afe308cb8cf96fac6c6c06144e28a15",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/patchouli_data.json"
     },
     {
       "id": "resourcepacks-legendary tooltips-zip",
@@ -21164,6 +21188,12 @@
       "path": "resourcepacks/Vanilla+Advancement.zip",
       "sha256": "3e31908260f41ea988d41b0bcdefd34dd815f264dde012f026931a87b086cada",
       "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/resourcepacks/Vanilla%2BAdvancement.zip"
+    },
+    {
+      "id": "server-icon-png",
+      "path": "server-icon.png",
+      "sha256": "63b9a5b10e9aa0ac59408cacd0cc5071a479058c4f68ed525d063f87f20f7d2c",
+      "url": "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/server-icon.png"
     },
     {
       "id": "servers-dat",

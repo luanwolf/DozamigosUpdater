@@ -10,7 +10,9 @@ Baixa o `dozamigos-manifest.json` de um repositorio GitHub (ou qualquer URL HTTP
 gradlew.bat build
 ```
 
-Jar em `build/libs/dozamigos-1.0.5.jar` — copie para a pasta `mods` da instance.
+Jar em `build/libs/dozamigos-1.0.6.jar` — copie para a pasta `mods` da instance.
+
+Resource packs e shader packs do jogador **nao sao removidos** pelo updater (so ADDED/UPDATED do pack).
 
 ## Config
 
