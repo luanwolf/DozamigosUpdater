@@ -6,6 +6,9 @@ tempadwithshaders-*-1.0.0.jar
 *.disabled
 config/dozamigos/*
 config/dozamigos-client.toml
+journeymap/data/**
+journeymap/icon/**
+journeymap/web/**
 *.log
 *.bak
 *.tmp

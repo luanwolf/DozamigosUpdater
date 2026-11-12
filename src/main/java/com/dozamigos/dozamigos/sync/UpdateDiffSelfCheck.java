@@ -73,6 +73,41 @@ public final class UpdateDiffSelfCheck {
                 .filter(c -> c.kind() == ChangeKind.REMOVED && UpdateDiff.isUserContentPath(c.oldFile()))
                 .count(), "no resourcepack removed");
 
+        // config reescrito pelo mod apos apply: fileSha == want -> nao pede UPDATED de novo
+        Files.write(config.resolve("drift.toml"), "local-rewrite".getBytes(StandardCharsets.UTF_8));
+        Map<String, String> ownedDrift = Map.of("drift", "config/drift.toml");
+        String packSha = shaBytes("from-pack".getBytes(StandardCharsets.UTF_8));
+        Map<String, String> applied = Map.of("drift", packSha);
+        PackManifest driftManifest = new PackManifest();
+        driftManifest.packVersion = "4.0.0";
+        driftManifest.mods = List.of();
+        driftManifest.files = List.of(file("drift", "config/drift.toml", packSha, "http://x/drift"));
+        UpdatePlan noLoop = UpdateDiff.compute(driftManifest, Map.of(), ownedDrift, applied, mods, tmp);
+        assertEq(0, noLoop.changes().size(), "no rewrite loop");
+
+        // pack mudou o sha -> UPDATED mesmo com fileSha antigo
+        String newPackSha = shaBytes("pack-v2".getBytes(StandardCharsets.UTF_8));
+        PackManifest bumped = new PackManifest();
+        bumped.packVersion = "4.0.1";
+        bumped.mods = List.of();
+        bumped.files = List.of(file("drift", "config/drift.toml", newPackSha, "http://x/drift2"));
+        UpdatePlan mustUpdate = UpdateDiff.compute(bumped, Map.of(), ownedDrift, applied, mods, tmp);
+        assertEq(1L, mustUpdate.count(ChangeKind.UPDATED, FileKind.FILE), "pack bump updates");
+
+        // journeymap/data no manifest remoto e ignorado
+        PackManifest jm = new PackManifest();
+        jm.packVersion = "5.0.0";
+        jm.mods = List.of();
+        jm.files = List.of(
+                file("jm-map", "journeymap/data/mp/world/day/0,0.png", shaBytes("png".getBytes(StandardCharsets.UTF_8)), "http://x/map"),
+                file("jm-cfg", "journeymap/config/5.9/journeymap.core.config", shaBytes("cfg".getBytes(StandardCharsets.UTF_8)), "http://x/jmcfg")
+        );
+        UpdatePlan jmPlan = UpdateDiff.compute(jm, Map.of(), Map.of(), mods, tmp);
+        assertEq(1, jmPlan.changes().size(), "only journeymap config");
+        if (!"jm-cfg".equals(jmPlan.changes().get(0).id())) {
+            throw new AssertionError("journeymap config id: expected jm-cfg got " + jmPlan.changes().get(0).id());
+        }
+
         System.out.println("UpdateDiffSelfCheck OK");
     }
 

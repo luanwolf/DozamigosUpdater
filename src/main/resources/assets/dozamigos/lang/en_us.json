@@ -2,6 +2,7 @@
   "dozamigos.button.menu": "Check for updates",
   "dozamigos.button.refresh": "Check",
   "dozamigos.button.apply": "Apply",
+  "dozamigos.button.restart": "Restart Minecraft",
   "dozamigos.screen.title": "Dozamigos Modpack Updater",
   "dozamigos.screen.pack": "Modpack %s",
   "dozamigos.screen.pack.unknown": "Pack —",

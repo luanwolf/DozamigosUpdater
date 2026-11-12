@@ -28,6 +28,7 @@ public class UpdaterScreen extends Screen {
     private ChangeList list;
     private Button applyButton;
     private Button refreshButton;
+    private Button restartButton;
     private String status = "";
     private boolean statusIsError = false;
     private boolean busy = false;
@@ -62,11 +63,13 @@ public class UpdaterScreen extends Screen {
 
         int btnY = height - 28;
         refreshButton = addRenderableWidget(Button.builder(Component.translatable("dozamigos.button.refresh"), b -> refresh())
-                .bounds(width / 2 - 154, btnY, 100, 20).build());
+                .bounds(width / 2 - 206, btnY, 96, 20).build());
         applyButton = addRenderableWidget(Button.builder(Component.translatable("dozamigos.button.apply"), b -> apply())
-                .bounds(width / 2 - 50, btnY, 100, 20).build());
+                .bounds(width / 2 - 106, btnY, 96, 20).build());
+        restartButton = addRenderableWidget(Button.builder(Component.translatable("dozamigos.button.restart"), b -> restartGame())
+                .bounds(width / 2 - 6, btnY, 96, 20).build());
         addRenderableWidget(Button.builder(Component.translatable("gui.cancel"), b -> onClose())
-                .bounds(width / 2 + 54, btnY, 100, 20).build());
+                .bounds(width / 2 + 94, btnY, 96, 20).build());
 
         reloadList();
         if (plan == null || (plan.isEmpty() && UpdateService.lastError() == null && !UpdateService.isBusy())) {
@@ -76,6 +79,12 @@ public class UpdaterScreen extends Screen {
             statusIsError = true;
         }
         updateButtons();
+    }
+
+    private void restartGame() {
+        if (minecraft != null) {
+            minecraft.stop();
+        }
     }
 
     private void refresh() {
@@ -181,6 +190,8 @@ public class UpdaterScreen extends Screen {
     private void updateButtons() {
         applyButton.active = !busy && plan != null && !plan.isEmpty();
         refreshButton.active = !busy;
+        // Ativo sempre; depois do apply o status ja pede reinicio.
+        restartButton.active = !busy;
     }
 
     @Override

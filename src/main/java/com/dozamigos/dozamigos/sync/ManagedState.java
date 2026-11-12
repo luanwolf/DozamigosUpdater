@@ -26,6 +26,8 @@ public final class ManagedState {
     private Map<String, String> mods = new LinkedHashMap<>();
     /** id -> relative path from game dir */
     private Map<String, String> files = new LinkedHashMap<>();
+    /** id -> last pack sha256 successfully applied (or matched). Stops config rewrite loops. */
+    private Map<String, String> fileSha = new LinkedHashMap<>();
 
     public ManagedState(Path gameDir) {
         this.file = gameDir.resolve("config").resolve("dozamigos").resolve("managed.json");
@@ -40,6 +42,10 @@ public final class ManagedState {
         return files;
     }
 
+    public Map<String, String> fileSha() {
+        return fileSha;
+    }
+
     public void putMod(String id, String filename) {
         mods.put(id, filename);
     }
@@ -52,13 +58,22 @@ public final class ManagedState {
         files.put(id, relativePath.replace('\\', '/'));
     }
 
+    public void putFile(String id, String relativePath, String sha256) {
+        putFile(id, relativePath);
+        if (sha256 != null && !sha256.isBlank()) {
+            fileSha.put(id, sha256.toLowerCase());
+        }
+    }
+
     public void removeFile(String id) {
         files.remove(id);
+        fileSha.remove(id);
     }
 
     public void load() {
         mods = new LinkedHashMap<>();
         files = new LinkedHashMap<>();
+        fileSha = new LinkedHashMap<>();
         if (!Files.isRegularFile(file)) {
             return;
         }
@@ -68,7 +83,7 @@ public final class ManagedState {
                 return;
             }
             JsonObject obj = root.getAsJsonObject();
-            if (obj.has("mods") || obj.has("files") || obj.has("configs")) {
+            if (obj.has("mods") || obj.has("files") || obj.has("configs") || obj.has("fileSha")) {
                 if (obj.has("mods") && obj.get("mods").isJsonObject()) {
                     Map<String, String> parsed = GSON.fromJson(obj.get("mods"), MAP_TYPE);
                     if (parsed != null) {
@@ -88,6 +103,17 @@ public final class ManagedState {
                         files.putAll(parsed);
                     }
                 }
+                if (obj.has("fileSha") && obj.get("fileSha").isJsonObject()) {
+                    Map<String, String> parsed = GSON.fromJson(obj.get("fileSha"), MAP_TYPE);
+                    if (parsed != null) {
+                        fileSha = new LinkedHashMap<>();
+                        for (Map.Entry<String, String> e : parsed.entrySet()) {
+                            if (e.getKey() != null && e.getValue() != null) {
+                                fileSha.put(e.getKey(), e.getValue().toLowerCase());
+                            }
+                        }
+                    }
+                }
             } else {
                 Map<String, String> parsed = GSON.fromJson(obj, MAP_TYPE);
                 if (parsed != null) {
@@ -98,6 +124,7 @@ public final class ManagedState {
             DozamigosMod.LOGGER.warn("Falha ao ler managed.json, comecando limpo", e);
             mods = new LinkedHashMap<>();
             files = new LinkedHashMap<>();
+            fileSha = new LinkedHashMap<>();
         }
     }
 
@@ -107,6 +134,7 @@ public final class ManagedState {
             JsonObject root = new JsonObject();
             root.add("mods", GSON.toJsonTree(mods, MAP_TYPE));
             root.add("files", GSON.toJsonTree(files, MAP_TYPE));
+            root.add("fileSha", GSON.toJsonTree(fileSha, MAP_TYPE));
             try (Writer writer = Files.newBufferedWriter(file)) {
                 GSON.toJson(root, writer);
             }

@@ -4,7 +4,7 @@
 config
 emotes
 fancymenu_data
-journeymap
+journeymap/config
 local
 mod_data
 defaultconfigs

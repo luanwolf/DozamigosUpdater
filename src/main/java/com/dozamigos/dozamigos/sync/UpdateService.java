@@ -114,11 +114,13 @@ public final class UpdateService {
         ManagedState managed = state();
         Path mods = modsDir();
         Path game = gameDir();
-        UpdatePlan plan = UpdateDiff.compute(manifest, managed.mods(), managed.files(), mods, game, (done, total) -> {
-            // Diff ocupa 8%..85%
-            int pct = 8 + (int) ((done * 77L) / Math.max(1, total));
-            progress(pct, "Comparando... " + done + "/" + total);
-        });
+        UpdatePlan plan = UpdateDiff.compute(
+                manifest, managed.mods(), managed.files(), managed.fileSha(), mods, game,
+                (done, total) -> {
+                    // Diff ocupa 8%..85%
+                    int pct = 8 + (int) ((done * 77L) / Math.max(1, total));
+                    progress(pct, "Comparando... " + done + "/" + total);
+                });
         progress(86, "Sincronizando estado...");
         adoptMatching(manifest, managed, mods, game);
         managed.save();
@@ -143,10 +145,10 @@ public final class UpdateService {
             progress(86 + (done * 14) / total, "Sincronizando... " + done + "/" + total);
         }
         for (PackFileEntry entry : filesList) {
-            if (entry != null && entry.isValid()) {
+            if (entry != null && entry.isValid() && !UpdateDiff.isRuntimeDataPath(entry.path)) {
                 Path path = PathSafety.resolveUnder(game, entry.path);
                 if (Files.isRegularFile(path) && HashUtil.equalsIgnoreCase(HashUtil.sha256(path), entry.sha256)) {
-                    managed.putFile(entry.id, entry.path);
+                    managed.putFile(entry.id, entry.path, entry.sha256);
                 }
             }
             done++;
@@ -254,7 +256,7 @@ public final class UpdateService {
                 if (change.oldFile() != null && !change.oldFile().replace('\\', '/').equals(change.newFile().replace('\\', '/'))) {
                     Files.deleteIfExists(PathSafety.resolveUnder(game, change.oldFile()));
                 }
-                managed.putFile(change.id(), change.newFile());
+                managed.putFile(change.id(), change.newFile(), change.sha256());
             }
             case REMOVED -> {
                 if (progress != null) {
