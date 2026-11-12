@@ -9,8 +9,9 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
 /**
- * Popup de update. Nao chama parent.render() completo: no GuiGraphics 1.20.1 o texto
- * dos widgets do title screen flusha DEPOIS dos fills e furava o painel.
+ * Popup de update. Nao chama parent.render/renderBackground: FancyMenu (e o
+ * GuiGraphics 1.20.1) enfileira label no batch de texto e flusha DEPOIS dos fills,
+ * furando o painel. Fundo opaco nosso + painel por cima.
  */
 public class UpdatePopupScreen extends Screen {
     private static final int COL_GOLD = 0xFFE8C547;
@@ -22,6 +23,7 @@ public class UpdatePopupScreen extends Screen {
     private static final int COL_PANEL_INNER = 0xFF1C1C1C;
     private static final int COL_BORDER = 0xFF5A5A5A;
     private static final int COL_HEADER = 0xFF252018;
+    private static final int COL_VEIL = 0xFF0C0C12;
 
     private final Screen parent;
     private final UpdatePlan plan;
@@ -46,13 +48,10 @@ public class UpdatePopupScreen extends Screen {
 
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
-        // So o fundo (panorama/dirt) — sem labels dos botoes do menu.
-        if (parent != null) {
-            parent.renderBackground(g);
-        } else {
-            renderBackground(g);
-        }
+        // ponytail: veil opaco — FancyMenu no parent.renderBackground fura o painel via batch de texto
+        g.fill(0, 0, width, height, COL_VEIL);
         drawFrostedDim(g);
+        g.flush();
 
         int cx = width / 2;
         int cy = height / 2;
@@ -61,7 +60,7 @@ public class UpdatePopupScreen extends Screen {
         int right = cx + 150;
         int bottom = cy + 96;
 
-        g.fill(left - 3, top - 3, right + 3, bottom + 3, 0x88000000);
+        g.fill(left - 3, top - 3, right + 3, bottom + 3, 0xFF000000);
         g.fill(left, top, right, bottom, COL_PANEL);
         g.fill(left + 1, top + 1, right - 1, bottom - 1, COL_PANEL_INNER);
         g.renderOutline(left, top, right - left, bottom - top, COL_BORDER);
@@ -85,9 +84,8 @@ public class UpdatePopupScreen extends Screen {
 
     /** Dim em camadas no lugar de blur real (1.20.1 nao expoe blur de menu). */
     private void drawFrostedDim(GuiGraphics g) {
-        g.fill(0, 0, width, height, 0x66000000);
-        g.fill(0, 0, width, height, 0x55000000);
-        g.fillGradient(0, 0, width, height, 0xC0101018, 0xE0080810);
+        g.fill(0, 0, width, height, 0xAA000000);
+        g.fillGradient(0, 0, width, height, 0xD0181820, 0xF0080810);
     }
 
     private void drawKindRow(GuiGraphics g, int x, int y, FileKind kind, String labelKey) {

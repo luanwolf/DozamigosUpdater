@@ -13,6 +13,7 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.client.event.ScreenEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public final class TitleScreenHooks {
@@ -36,6 +37,14 @@ public final class TitleScreenHooks {
         }
 
         maybeCheck(title);
+    }
+
+    /** FancyMenu pinta o layout do title no Post — redesenha o popup por cima. */
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void onRenderPost(ScreenEvent.Render.Post event) {
+        if (event.getScreen() instanceof UpdatePopupScreen popup) {
+            popup.render(event.getGuiGraphics(), event.getMouseX(), event.getMouseY(), event.getPartialTick());
+        }
     }
 
     /** Empurra o menu pra baixo e coloca o botao no lugar do Singleplayer original. */
