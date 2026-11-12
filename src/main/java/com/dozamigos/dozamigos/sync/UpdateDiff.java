@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiConsumer;
 
 /**
  * Pure diff between remote manifest and local managed ownership.
@@ -22,9 +23,26 @@ public final class UpdateDiff {
             Path modsDir,
             Path gameDir
     ) throws IOException {
+        return compute(manifest, ownedMods, ownedFiles, modsDir, gameDir, null);
+    }
+
+    public static UpdatePlan compute(
+            PackManifest manifest,
+            Map<String, String> ownedMods,
+            Map<String, String> ownedFiles,
+            Path modsDir,
+            Path gameDir,
+            BiConsumer<Integer, Integer> progress
+    ) throws IOException {
+        Map<String, ModEntry> remoteMods = remoteMods(manifest);
+        Map<String, PackFileEntry> remoteFiles = remoteFiles(manifest);
+        int total = Math.max(1, remoteMods.size() + remoteFiles.size());
+        int[] done = {0};
+
         List<ModChange> changes = new ArrayList<>();
-        changes.addAll(diffMods(manifest, ownedMods, modsDir));
-        changes.addAll(diffPackFiles(manifest, ownedFiles, gameDir));
+        changes.addAll(diffMods(remoteMods, ownedMods, modsDir, progress, done, total));
+        changes.addAll(diffPackFiles(remoteFiles, ownedFiles, gameDir, progress, done, total));
+        tick(progress, total, total);
         return new UpdatePlan(manifest.packVersion == null ? "" : manifest.packVersion, List.copyOf(changes));
     }
 
@@ -33,7 +51,7 @@ public final class UpdateDiff {
         return compute(manifest, owned, Map.of(), modsDir, modsDir.getParent() == null ? modsDir : modsDir.getParent());
     }
 
-    private static List<ModChange> diffMods(PackManifest manifest, Map<String, String> owned, Path modsDir) throws IOException {
+    private static Map<String, ModEntry> remoteMods(PackManifest manifest) {
         Map<String, ModEntry> remote = new LinkedHashMap<>();
         if (manifest.mods != null) {
             for (ModEntry entry : manifest.mods) {
@@ -42,7 +60,27 @@ public final class UpdateDiff {
                 }
             }
         }
+        return remote;
+    }
 
+    private static Map<String, PackFileEntry> remoteFiles(PackManifest manifest) {
+        Map<String, PackFileEntry> remote = new LinkedHashMap<>();
+        for (PackFileEntry entry : manifest.allPackFiles()) {
+            if (entry != null && entry.isValid()) {
+                remote.put(entry.id, entry);
+            }
+        }
+        return remote;
+    }
+
+    private static List<ModChange> diffMods(
+            Map<String, ModEntry> remote,
+            Map<String, String> owned,
+            Path modsDir,
+            BiConsumer<Integer, Integer> progress,
+            int[] done,
+            int total
+    ) throws IOException {
         List<ModChange> changes = new ArrayList<>();
         Map<String, String> ownedCopy = new LinkedHashMap<>(owned);
 
@@ -56,20 +94,19 @@ public final class UpdateDiff {
                 Path byName = modsDir.resolve(want.file);
                 if (Files.isRegularFile(byName)) {
                     String hash = HashUtil.sha256(byName);
-                    if (HashUtil.equalsIgnoreCase(hash, want.sha256)) {
-                        continue;
+                    if (!HashUtil.equalsIgnoreCase(hash, want.sha256)) {
+                        changes.add(ModChange.updatedMod(id, want.file, want));
                     }
-                    changes.add(ModChange.updatedMod(id, want.file, want));
                 } else {
                     changes.add(ModChange.addedMod(want));
                 }
-                continue;
+            } else {
+                String localHash = HashUtil.sha256(localPath);
+                if (!HashUtil.equalsIgnoreCase(localHash, want.sha256) || !localFile.equals(want.file)) {
+                    changes.add(ModChange.updatedMod(id, localFile, want));
+                }
             }
-
-            String localHash = HashUtil.sha256(localPath);
-            if (!HashUtil.equalsIgnoreCase(localHash, want.sha256) || !localFile.equals(want.file)) {
-                changes.add(ModChange.updatedMod(id, localFile, want));
-            }
+            tick(progress, ++done[0], total);
         }
 
         for (Map.Entry<String, String> e : ownedCopy.entrySet()) {
@@ -80,14 +117,14 @@ public final class UpdateDiff {
         return changes;
     }
 
-    private static List<ModChange> diffPackFiles(PackManifest manifest, Map<String, String> owned, Path gameDir) throws IOException {
-        Map<String, PackFileEntry> remote = new LinkedHashMap<>();
-        for (PackFileEntry entry : manifest.allPackFiles()) {
-            if (entry != null && entry.isValid()) {
-                remote.put(entry.id, entry);
-            }
-        }
-
+    private static List<ModChange> diffPackFiles(
+            Map<String, PackFileEntry> remote,
+            Map<String, String> owned,
+            Path gameDir,
+            BiConsumer<Integer, Integer> progress,
+            int[] done,
+            int total
+    ) throws IOException {
         List<ModChange> changes = new ArrayList<>();
         Map<String, String> ownedCopy = new LinkedHashMap<>(owned);
 
@@ -101,21 +138,20 @@ public final class UpdateDiff {
                 Path byPath = PathSafety.resolveUnder(gameDir, want.path);
                 if (Files.isRegularFile(byPath)) {
                     String hash = HashUtil.sha256(byPath);
-                    if (HashUtil.equalsIgnoreCase(hash, want.sha256)) {
-                        continue;
+                    if (!HashUtil.equalsIgnoreCase(hash, want.sha256)) {
+                        changes.add(ModChange.updatedFile(id, want.path, want));
                     }
-                    changes.add(ModChange.updatedFile(id, want.path, want));
                 } else {
                     changes.add(ModChange.addedFile(want));
                 }
-                continue;
+            } else {
+                String localHash = HashUtil.sha256(localPath);
+                if (!HashUtil.equalsIgnoreCase(localHash, want.sha256)
+                        || !localRel.replace('\\', '/').equals(want.path.replace('\\', '/'))) {
+                    changes.add(ModChange.updatedFile(id, localRel, want));
+                }
             }
-
-            String localHash = HashUtil.sha256(localPath);
-            if (!HashUtil.equalsIgnoreCase(localHash, want.sha256)
-                    || !localRel.replace('\\', '/').equals(want.path.replace('\\', '/'))) {
-                changes.add(ModChange.updatedFile(id, localRel, want));
-            }
+            tick(progress, ++done[0], total);
         }
 
         for (Map.Entry<String, String> e : ownedCopy.entrySet()) {
@@ -124,5 +160,11 @@ public final class UpdateDiff {
             }
         }
         return changes;
+    }
+
+    private static void tick(BiConsumer<Integer, Integer> progress, int done, int total) {
+        if (progress != null) {
+            progress.accept(done, total);
+        }
     }
 }

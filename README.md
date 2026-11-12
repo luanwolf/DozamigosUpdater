@@ -10,7 +10,7 @@ Baixa o `dozamigos-manifest.json` de um repositorio GitHub (ou qualquer URL HTTP
 gradlew.bat build
 ```
 
-Jar em `build/libs/dozamigos-1.0.3.jar` — copie para a pasta `mods` da instance.
+Jar em `build/libs/dozamigos-1.0.4.jar` — copie para a pasta `mods` da instance.
 
 ## Config
 

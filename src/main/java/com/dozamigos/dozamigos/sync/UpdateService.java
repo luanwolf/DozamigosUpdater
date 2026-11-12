@@ -26,6 +26,8 @@ public final class UpdateService {
     private static final AtomicBoolean CHECKING = new AtomicBoolean(false);
     private static volatile UpdatePlan lastPlan = new UpdatePlan("", List.of());
     private static volatile String lastError = null;
+    private static volatile int progressPercent = 0;
+    private static volatile String progressMessage = "";
 
     private UpdateService() {}
 
@@ -39,6 +41,21 @@ public final class UpdateService {
 
     public static boolean isBusy() {
         return CHECKING.get();
+    }
+
+    public static int progressPercent() {
+        return progressPercent;
+    }
+
+    public static String progressMessage() {
+        return progressMessage;
+    }
+
+    private static void progress(int percent, String message) {
+        progressPercent = Math.max(0, Math.min(100, percent));
+        if (message != null) {
+            progressMessage = message;
+        }
     }
 
     public static Path gameDir() {
@@ -58,10 +75,12 @@ public final class UpdateService {
             return CompletableFuture.completedFuture(lastPlan);
         }
         lastError = null;
+        progress(0, "Verificando atualizacoes...");
         return CompletableFuture.supplyAsync(() -> {
             try {
                 UpdatePlan plan = checkNow();
                 lastPlan = plan;
+                progress(100, "Pronto");
                 return plan;
             } catch (Exception e) {
                 lastError = e.getMessage() == null ? e.toString() : e.getMessage();
@@ -74,6 +93,7 @@ public final class UpdateService {
     }
 
     public static UpdatePlan checkNow() throws IOException {
+        progress(2, "Baixando manifest...");
         String url = DozamigosConfig.manifestUrl();
         String json = HttpUtil.getText(url);
         PackManifest manifest = GSON.fromJson(json, PackManifest.class);
@@ -90,56 +110,80 @@ public final class UpdateService {
             manifest.configs = List.of();
         }
 
+        progress(8, "Comparando arquivos...");
         ManagedState managed = state();
         Path mods = modsDir();
         Path game = gameDir();
-        UpdatePlan plan = UpdateDiff.compute(manifest, managed.mods(), managed.files(), mods, game);
+        UpdatePlan plan = UpdateDiff.compute(manifest, managed.mods(), managed.files(), mods, game, (done, total) -> {
+            // Diff ocupa 8%..85%
+            int pct = 8 + (int) ((done * 77L) / Math.max(1, total));
+            progress(pct, "Comparando... " + done + "/" + total);
+        });
+        progress(86, "Sincronizando estado...");
         adoptMatching(manifest, managed, mods, game);
         managed.save();
+        progress(100, "Pronto");
         return plan;
     }
 
     private static void adoptMatching(PackManifest manifest, ManagedState managed, Path mods, Path game) throws IOException {
-        for (ModEntry entry : manifest.mods) {
-            if (entry == null || !entry.isValid()) {
-                continue;
+        List<ModEntry> modsList = manifest.mods;
+        List<PackFileEntry> filesList = manifest.allPackFiles();
+        int total = Math.max(1, modsList.size() + filesList.size());
+        int done = 0;
+
+        for (ModEntry entry : modsList) {
+            if (entry != null && entry.isValid()) {
+                Path path = mods.resolve(entry.file);
+                if (Files.isRegularFile(path) && HashUtil.equalsIgnoreCase(HashUtil.sha256(path), entry.sha256)) {
+                    managed.putMod(entry.id, entry.file);
+                }
             }
-            Path path = mods.resolve(entry.file);
-            if (Files.isRegularFile(path) && HashUtil.equalsIgnoreCase(HashUtil.sha256(path), entry.sha256)) {
-                managed.putMod(entry.id, entry.file);
-            }
+            done++;
+            progress(86 + (done * 14) / total, "Sincronizando... " + done + "/" + total);
         }
-        for (PackFileEntry entry : manifest.allPackFiles()) {
-            if (entry == null || !entry.isValid()) {
-                continue;
+        for (PackFileEntry entry : filesList) {
+            if (entry != null && entry.isValid()) {
+                Path path = PathSafety.resolveUnder(game, entry.path);
+                if (Files.isRegularFile(path) && HashUtil.equalsIgnoreCase(HashUtil.sha256(path), entry.sha256)) {
+                    managed.putFile(entry.id, entry.path);
+                }
             }
-            Path path = PathSafety.resolveUnder(game, entry.path);
-            if (Files.isRegularFile(path) && HashUtil.equalsIgnoreCase(HashUtil.sha256(path), entry.sha256)) {
-                managed.putFile(entry.id, entry.path);
-            }
+            done++;
+            progress(86 + (done * 14) / total, "Sincronizando... " + done + "/" + total);
         }
     }
 
-    public static CompletableFuture<ApplyResult> applyAsync(UpdatePlan plan, Consumer<String> progress) {
-        return CompletableFuture.supplyAsync(() -> applyNow(plan, progress), WORKER);
+    public static CompletableFuture<ApplyResult> applyAsync(UpdatePlan plan, Consumer<String> progressLabel) {
+        progress(0, "Aplicando atualizacoes...");
+        return CompletableFuture.supplyAsync(() -> applyNow(plan, progressLabel), WORKER);
     }
 
-    public static ApplyResult applyNow(UpdatePlan plan, Consumer<String> progress) {
+    public static ApplyResult applyNow(UpdatePlan plan, Consumer<String> progressLabel) {
         ManagedState managed = state();
         Path mods = modsDir();
         Path game = gameDir();
         List<String> errors = new ArrayList<>();
         int ok = 0;
+        List<ModChange> changes = plan.changes();
+        int total = Math.max(1, changes.size());
 
-        for (ModChange change : plan.changes()) {
+        for (int i = 0; i < changes.size(); i++) {
+            ModChange change = changes.get(i);
+            int pct = (i * 100) / total;
+            String label = labelFor(change);
+            progress(pct, label);
+            if (progressLabel != null) {
+                progressLabel.accept(label + "  (" + pct + "%)");
+            }
             try {
                 switch (change.target()) {
                     case MOD -> {
-                        applyMod(change, managed, mods, progress);
+                        applyMod(change, managed, mods, null);
                         ok++;
                     }
                     case FILE -> {
-                        applyPackFile(change, managed, game, progress);
+                        applyPackFile(change, managed, game, null);
                         ok++;
                     }
                 }
@@ -150,7 +194,18 @@ public final class UpdateService {
         }
 
         managed.save();
+        progress(100, "Concluido");
+        if (progressLabel != null) {
+            progressLabel.accept("Concluido");
+        }
         return new ApplyResult(ok, List.copyOf(errors));
+    }
+
+    private static String labelFor(ModChange change) {
+        return switch (change.kind()) {
+            case ADDED, UPDATED -> "Baixando " + change.displayFile();
+            case REMOVED -> "Removendo " + change.displayFile();
+        };
     }
 
     private static void applyMod(ModChange change, ManagedState managed, Path mods, Consumer<String> progress) throws Exception {

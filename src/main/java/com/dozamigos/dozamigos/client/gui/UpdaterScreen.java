@@ -56,7 +56,7 @@ public class UpdaterScreen extends Screen {
         panelBottom = height - 36;
 
         int listTop = panelTop + 52;
-        int listBottom = panelBottom - 34;
+        int listBottom = panelBottom - 48;
         list = new ChangeList(minecraft, width, height, listTop, listBottom, 28);
         addWidget(list);
 
@@ -113,6 +113,18 @@ public class UpdaterScreen extends Screen {
                 updateButtons();
             });
         });
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (busy) {
+            String msg = UpdateService.progressMessage();
+            if (msg != null && !msg.isBlank()) {
+                status = msg;
+                statusIsError = false;
+            }
+        }
     }
 
     private void apply() {
@@ -265,19 +277,38 @@ public class UpdaterScreen extends Screen {
     private void drawStatusBar(GuiGraphics g) {
         int left = panelLeft + 2;
         int right = panelRight - 2;
-        int top = panelBottom - 30;
+        int top = panelBottom - 44;
         int bottom = panelBottom - 2;
         g.fill(left, top, right, bottom, 0xFF121212);
         g.fill(left, top, right, top + 1, 0xFF3A3A3A);
 
         int color = statusIsError ? COL_REMOVED : COL_GOLD;
         int maxW = right - left - 12;
-        List<FormattedCharSequence> lines = font.split(Component.literal(status == null ? "" : status), maxW);
-        int y = top + 6;
-        for (int i = 0; i < Math.min(lines.size(), 2); i++) {
-            g.drawCenteredString(font, lines.get(i), width / 2, y, color);
-            y += 10;
+        String label = status == null ? "" : status;
+        if (busy) {
+            label = UpdateService.progressPercent() + "%  " + label;
         }
+        List<FormattedCharSequence> lines = font.split(Component.literal(label), maxW);
+        int y = top + 4;
+        for (int i = 0; i < Math.min(lines.size(), 1); i++) {
+            g.drawCenteredString(font, lines.get(i), width / 2, y, color);
+        }
+
+        if (busy) {
+            drawProgressBar(g, left + 8, top + 18, right - left - 16, 12, UpdateService.progressPercent());
+        }
+    }
+
+    private void drawProgressBar(GuiGraphics g, int x, int y, int w, int h, int percent) {
+        int pct = Math.max(0, Math.min(100, percent));
+        g.fill(x, y, x + w, y + h, 0xFF0A0A0A);
+        g.renderOutline(x, y, w, h, 0xFF3A3A3A);
+        int fill = Math.max(0, (w - 2) * pct / 100);
+        if (fill > 0) {
+            g.fill(x + 1, y + 1, x + 1 + fill, y + h - 1, 0xFF3D8B40);
+            g.fill(x + 1, y + 1, x + 1 + fill, y + 3, 0xFF55C75A);
+        }
+        g.drawCenteredString(font, pct + "%", x + w / 2, y + (h - 8) / 2, 0xFFECECEC);
     }
 
     @Override
