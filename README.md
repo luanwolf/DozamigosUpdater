@@ -17,8 +17,8 @@ Jar em `build/libs/dozamigos-1.0.0.jar` — copie para a pasta `mods` da instanc
 Depois do primeiro launch: `config/dozamigos-client.toml`
 
 ```toml
-manifestUrl = "https://raw.githubusercontent.com/USER/REPO/main/dozamigos-manifest.json"
-githubToken = ""
+manifestUrl = "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/dozamigos-manifest.json"
+githubToken = ""   # obrigatorio enquanto o repo for privado (PAT com scope repo)
 checkOnTitleScreen = true
 showTitleButton = true
 ```
@@ -42,4 +42,15 @@ Na tela do atualizador: **Verificar** → revise a lista colorida → **Aplicar*
 
 ## Gerar o manifest
 
-Script em `tools/generate-manifest.ps1` — varre `mods/` + pastas do `manifest-include.txt` (config, resourcepacks, options.txt, etc.), imprime `+ ~ - SKIP` e grava o JSON. Detalhes em `example-manifest/README.md`.
+A arvore publicada fica em `modpack/`. O JSON na raiz (`dozamigos-manifest.json`) aponta downloads para `raw.githubusercontent.com/.../main/modpack/...`.
+
+```powershell
+.\tools\generate-manifest.ps1 `
+  -GameDir ".\modpack" `
+  -PackVersion "1.0.0" `
+  -ReleaseBase "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods" `
+  -FilesUrlBase "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack" `
+  -OutFile ".\dozamigos-manifest.json"
+```
+
+Detalhes em `example-manifest/README.md`.

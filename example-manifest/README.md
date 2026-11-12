@@ -1,10 +1,18 @@
 # Manifest Dozamigos
 
-Publique este JSON no GitHub e coloque a URL em `config/dozamigos-client.toml` -> `manifestUrl`.
+O manifest publicado fica na raiz do repo: [`/dozamigos-manifest.json`](../dozamigos-manifest.json).
+
+URL do cliente (`config/dozamigos-client.toml` → `manifestUrl`):
+
+```
+https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/dozamigos-manifest.json
+```
+
+Repo privado: o cliente precisa de `githubToken` (PAT com scope `repo`).
 
 ## O que entra no sync
 
-Definido em `tools/manifest-include.txt` (padrao do pack Dozamigos):
+Definido em `tools/manifest-include.txt` — paths relativos a `modpack/`:
 
 - `mods/` (secao propria)
 - `config/`
@@ -12,7 +20,6 @@ Definido em `tools/manifest-include.txt` (padrao do pack Dozamigos):
 - `fancymenu_data/`
 - `journeymap/`
 - `local/`
-- `mod_data/`
 - `resourcepacks/`
 - `shaderpacks/`
 - `options.txt`
@@ -21,26 +28,27 @@ Definido em `tools/manifest-include.txt` (padrao do pack Dozamigos):
 
 Nao entram: `saves/`, logs, crash-reports, e o proprio config do updater (`config/dozamigos*`).
 
-## Gerar automatico
+Downloads apontam para `modpack/` no mesmo repo (`raw.githubusercontent.com/.../main/modpack/...`).
+
+## Gerar
 
 ```powershell
-cd e:\Github\Minecraft\dozamigos\tools
+cd E:\Github\DozamigosUpdater\tools
 
 .\generate-manifest.ps1 `
-  -GameDir "C:\Users\Luan Wolf\curseforge\minecraft\Instances\asdsasdadsadsadas" `
+  -GameDir "..\modpack" `
   -PackVersion "1.0.0" `
-  -ReleaseBase "https://github.com/USER/REPO/releases/download/v1.0.0" `
-  -FilesUrlBase "https://raw.githubusercontent.com/USER/REPO/main" `
-  -PreviousUrl "https://raw.githubusercontent.com/USER/REPO/main/dozamigos-manifest.json" `
-  -DryRun
+  -ReleaseBase "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods" `
+  -FilesUrlBase "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack" `
+  -OutFile "..\dozamigos-manifest.json"
 ```
 
 Fluxo:
 
-1. Roda o script e revisa o diff (`+ ~ - SKIP`)
-2. Sobe jars no GitHub Release
-3. Commit da arvore de files (`config/`, `resourcepacks/`, `options.txt`, ...) + `dozamigos-manifest.json`
-4. Clientes baixam sozinhos
+1. Atualiza arquivos em `modpack/`
+2. Roda o script e revisa o diff (`+ ~ - SKIP`)
+3. Commit + push de `modpack/` + `dozamigos-manifest.json`
+4. Clientes baixam sozinhos (com token se o repo for privado)
 
 ## Formato
 
@@ -49,7 +57,7 @@ Fluxo:
 | `packVersion` | Versao do pack na UI |
 | `mods[]` | Jars em `mods/` |
 | `files[].path` | Path relativo ao jogo |
-| `files[].url` | Download direto |
+| `files[].url` | Download direto (URL-encoded) |
 | `files[].sha256` | Integridade |
 
 `configs[]` antigo ainda e lido, mas o gerador grava em `files[]`.

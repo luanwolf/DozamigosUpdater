@@ -1,6 +1,6 @@
 #URL do manifest JSON do pack (raw GitHub, release asset, Pages, etc.).
-#Exemplo: https://raw.githubusercontent.com/SEU_USER/SEU_REPO/main/dozamigos-manifest.json
-manifestUrl = ""
+#Repo privado: preencha githubToken (PAT com scope repo).
+manifestUrl = "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/dozamigos-manifest.json"
 #Token GitHub opcional (repos privados / rate limit). Deixe vazio se publico.
 githubToken = ""
 #Checa atualizacoes ao abrir o menu principal e mostra popup se houver mudanca.
@@ -13,4 +13,3 @@ connectTimeoutMs = 15000
 #Timeout de leitura HTTP em ms.
 #Range: 1000 ~ 600000
 readTimeoutMs = 120000
-

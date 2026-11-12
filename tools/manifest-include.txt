@@ -6,7 +6,6 @@ emotes
 fancymenu_data
 journeymap
 local
-mod_data
 resourcepacks
 shaderpacks
 options.txt

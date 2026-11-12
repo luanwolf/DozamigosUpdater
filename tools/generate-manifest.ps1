@@ -5,10 +5,11 @@
 
 .EXAMPLE
   .\generate-manifest.ps1 `
-    -GameDir "C:\Users\Luan Wolf\curseforge\minecraft\Instances\asdsasdadsadsadas" `
+    -GameDir "..\modpack" `
     -PackVersion "1.0.0" `
-    -ReleaseBase "https://github.com/USER/REPO/releases/download/v1.0.0" `
-    -FilesUrlBase "https://raw.githubusercontent.com/USER/REPO/main"
+    -ReleaseBase "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods" `
+    -FilesUrlBase "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack" `
+    -OutFile "..\dozamigos-manifest.json"
 #>
 param(
     [Parameter(Mandatory = $true)]
@@ -35,7 +36,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 if (-not $OutFile) {
-    $OutFile = Join-Path (Split-Path $PSScriptRoot -Parent) "example-manifest\dozamigos-manifest.json"
+    $OutFile = Join-Path (Split-Path $PSScriptRoot -Parent) "dozamigos-manifest.json"
 }
 if (-not $ExcludeFile) { $ExcludeFile = Join-Path $PSScriptRoot "manifest-exclude.txt" }
 if (-not $IncludeFile) { $IncludeFile = Join-Path $PSScriptRoot "manifest-include.txt" }
@@ -68,6 +69,13 @@ function Test-Excluded([string]$name, [string[]]$patterns) {
         if ($name -like $p) { return $true }
     }
     return $false
+}
+
+# Encode each path segment so spaces / unicode keep working on raw.githubusercontent.com
+function Get-UrlPath([string]$relativePath) {
+    ($relativePath.Replace('\', '/') -split '/' | ForEach-Object {
+        [Uri]::EscapeDataString($_)
+    }) -join '/'
 }
 
 function Get-ModId([string]$fileName, [hashtable]$overrides) {
@@ -203,7 +211,7 @@ foreach ($jar in $jars) {
     Write-Progress -Activity "Hashing mods" -Status $jar.Name -PercentComplete (($i / [math]::Max($jars.Count, 1)) * 100)
     $hash = (Get-FileHash -LiteralPath $jar.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
     $modEntries.Add([pscustomobject]@{
-        id = $id; file = $jar.Name; sha256 = $hash; url = ($releaseBase + "/" + $jar.Name)
+        id = $id; file = $jar.Name; sha256 = $hash; url = ($releaseBase + "/" + (Get-UrlPath $jar.Name))
     }) | Out-Null
 }
 Write-Progress -Activity "Hashing mods" -Completed
@@ -246,7 +254,7 @@ foreach ($f in ($packFiles | Sort-Object FullName)) {
     Write-Progress -Activity "Hashing pack files" -Status $rel -PercentComplete (($j / [math]::Max($packFiles.Count, 1)) * 100)
     $hash = (Get-FileHash -LiteralPath $f.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
     $fileEntries.Add([pscustomobject]@{
-        id = $id; path = $rel; sha256 = $hash; url = ($filesUrlBase + "/" + $rel)
+        id = $id; path = $rel; sha256 = $hash; url = ($filesUrlBase + "/" + (Get-UrlPath $rel))
     }) | Out-Null
 }
 Write-Progress -Activity "Hashing pack files" -Completed
@@ -286,4 +294,4 @@ if ($dir -and -not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir |
 Write-Host ""
 Write-Host ("Escrito: {0}" -f $fullOut) -ForegroundColor Green
 Write-Host ("mods={0} files={1}" -f $modEntries.Count, $fileEntries.Count)
-Write-Host "Mods -> Release | Files -> commit no repo (mesma arvore: config/, resourcepacks/, ...)."
+Write-Host "URLs apontam para o repo (modpack/mods + arquivos em modpack/). Commit o JSON + a pasta modpack."

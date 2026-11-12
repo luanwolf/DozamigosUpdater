@@ -8,11 +8,11 @@ public final class DozamigosConfig {
     public static final ForgeConfigSpec.ConfigValue<String> MANIFEST_URL = BUILDER
             .comment(
                     "URL do manifest JSON do pack (raw GitHub, release asset, Pages, etc.).",
-                    "Exemplo: https://raw.githubusercontent.com/SEU_USER/SEU_REPO/main/dozamigos-manifest.json")
-            .define("manifestUrl", "");
+                    "Default aponta pro repo DozamigosUpdater.")
+            .define("manifestUrl", "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/dozamigos-manifest.json");
 
     public static final ForgeConfigSpec.ConfigValue<String> GITHUB_TOKEN = BUILDER
-            .comment("Token GitHub opcional (repos privados / rate limit). Deixe vazio se publico.")
+            .comment("Token GitHub opcional (so precisa se o repo do manifest for privado / rate limit).")
             .define("githubToken", "");
 
     public static final ForgeConfigSpec.BooleanValue CHECK_ON_TITLE = BUILDER
