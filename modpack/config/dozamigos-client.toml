@@ -4,8 +4,8 @@ manifestUrl = "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/
 githubToken = ""
 #Checa atualizacoes ao abrir o menu principal e mostra popup se houver mudanca.
 checkOnTitleScreen = true
-#Mostra botao Dozamigos no Title Screen vanilla (FancyMenu pode esconder; use a action/comando).
-showTitleButton = false
+#Mostra botao "Verificar atualizacao" acima de Um Jogador (FancyMenu pode esconder; use a action/comando).
+showTitleButton = true
 #Timeout de conexao HTTP em ms.
 #Range: 1000 ~ 120000
 connectTimeoutMs = 15000

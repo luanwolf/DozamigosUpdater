@@ -362,9 +362,18 @@ public class UpdaterScreen extends Screen {
             }
 
             int textX = bx + 18;
-            g.drawString(font, titleLine, textX, top + 3, 0xFFECECEC, false);
-            String clipped = font.plainSubstrByWidth(file, rowWidth - 34);
-            g.drawString(font, clipped, textX, top + 14, COL_MUTED, false);
+            int maxTextW = Math.max(16, rowR - textX - 6);
+            g.drawString(font, ellipsize(titleLine, maxTextW), textX, top + 3, 0xFFECECEC, false);
+            g.drawString(font, ellipsize(file, maxTextW), textX, top + 14, COL_MUTED, false);
+        }
+
+        private String ellipsize(String text, int maxWidth) {
+            if (font.width(text) <= maxWidth) {
+                return text;
+            }
+            String dots = "...";
+            int budget = Math.max(0, maxWidth - font.width(dots));
+            return font.plainSubstrByWidth(text, budget) + dots;
         }
 
         @Override
