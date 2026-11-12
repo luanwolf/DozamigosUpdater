@@ -74,11 +74,8 @@ public final class UpdateService {
     }
 
     public static UpdatePlan checkNow() throws IOException {
-        String url = DozamigosConfig.MANIFEST_URL.get();
-        if (url == null || url.isBlank()) {
-            throw new IOException("Configure manifestUrl em config/dozamigos-client.toml");
-        }
-        String json = HttpUtil.getText(url.trim());
+        String url = DozamigosConfig.manifestUrl();
+        String json = HttpUtil.getText(url);
         PackManifest manifest = GSON.fromJson(json, PackManifest.class);
         if (manifest == null) {
             throw new IOException("Manifest invalido");

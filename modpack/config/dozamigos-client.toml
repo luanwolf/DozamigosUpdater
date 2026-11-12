@@ -1,5 +1,4 @@
-#URL do manifest JSON do pack (raw GitHub, release asset, Pages, etc.).
-#Repo privado: preencha githubToken (PAT com scope repo).
+#URL do manifest JSON do pack. Vazio = default do jar (repo DozamigosUpdater).
 manifestUrl = "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/dozamigos-manifest.json"
 #Token GitHub opcional (repos privados / rate limit). Deixe vazio se publico.
 githubToken = ""

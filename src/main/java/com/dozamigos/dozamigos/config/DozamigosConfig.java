@@ -3,13 +3,16 @@ package com.dozamigos.dozamigos.config;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public final class DozamigosConfig {
+    public static final String DEFAULT_MANIFEST_URL =
+            "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/dozamigos-manifest.json";
+
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
     public static final ForgeConfigSpec.ConfigValue<String> MANIFEST_URL = BUILDER
             .comment(
                     "URL do manifest JSON do pack (raw GitHub, release asset, Pages, etc.).",
-                    "Default aponta pro repo DozamigosUpdater.")
-            .define("manifestUrl", "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/dozamigos-manifest.json");
+                    "Vazio = usa o default do DozamigosUpdater.")
+            .define("manifestUrl", DEFAULT_MANIFEST_URL);
 
     public static final ForgeConfigSpec.ConfigValue<String> GITHUB_TOKEN = BUILDER
             .comment("Token GitHub opcional (so precisa se o repo do manifest for privado / rate limit).")
@@ -34,4 +37,13 @@ public final class DozamigosConfig {
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     private DozamigosConfig() {}
+
+    /** Forge guarda "" se a config foi gerada por um jar antigo; cai no default nesse caso. */
+    public static String manifestUrl() {
+        String url = MANIFEST_URL.get();
+        if (url == null || url.isBlank()) {
+            return DEFAULT_MANIFEST_URL;
+        }
+        return url.trim();
+    }
 }

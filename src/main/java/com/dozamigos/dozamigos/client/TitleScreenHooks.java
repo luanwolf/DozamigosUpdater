@@ -39,10 +39,6 @@ public final class TitleScreenHooks {
         if (!DozamigosConfig.CHECK_ON_TITLE.get() || checkedThisSession) {
             return;
         }
-        String url = DozamigosConfig.MANIFEST_URL.get();
-        if (url == null || url.isBlank()) {
-            return;
-        }
         checkedThisSession = true;
         UpdateService.checkAsync().whenComplete((plan, err) -> {
             if (err != null || plan == null || plan.isEmpty()) {
