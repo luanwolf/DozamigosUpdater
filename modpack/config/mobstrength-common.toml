@@ -1,15 +1,15 @@
 
 ["Mob's Strength and Weakness"]
 	#Up to how much more health can mobs have? (%)
-	health_increase = 350
+	health_increase = 50
 	#Up to how much less health can mobs have? (%)
 	health_decrease = 15
 	#Up to how much more damage can mobs deal? (%)
-	damage_increase = 400
+	damage_increase = 30
 	#Up to how much less damage can mobs deal? (%)
 	damage_decrease = 15
 	#Up to how much faster can mobs be? (%)
-	speed_increase = 65
+	speed_increase = 20
 	#Up to how much slower can mobs be? (%)
 	speed_decrease = 15
 

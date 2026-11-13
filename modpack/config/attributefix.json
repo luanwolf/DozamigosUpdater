@@ -187,6 +187,17 @@
         "value": 100
       }
     },
+    "tacz:tacz.bullet_resistance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
+      }
+    },
     "irons_spellbooks:summon_damage": {
       "enabled": false,
       "min": {

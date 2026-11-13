@@ -34,7 +34,14 @@
         "solarflux:dispersive_upgrade": true,
         "solarflux:block_charging_upgrade": true,
         "solarflux:furnace_upgrade": true,
-        "solarflux:capacity_upgrade": true
+        "solarflux:capacity_upgrade": true,
+        "solarflux:sp_tf.carminite": true,
+        "solarflux:sp_tf.fiery": true,
+        "solarflux:twilightforest/twilight_upgrade": true,
+        "solarflux:twilightforest/twilight_cell_1": true,
+        "solarflux:twilightforest/twilight_cell_2": true,
+        "solarflux:solar_panels/twilightforest/fiery": true,
+        "solarflux:solar_panels/twilightforest/carminite": true
     }},
     "unregistered": {}
 }

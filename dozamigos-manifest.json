@@ -1,5 +1,5 @@
 {
-    "packVersion":  "1.0.4",
+    "packVersion":  "1.0.5",
     "mods":  [
                  {
                      "id":  "additional_lights",
@@ -460,7 +460,7 @@
                  {
                      "id":  "darkmobs",
                      "file":  "darkmobs-forge-1.20.1-1.0.6.jar",
-                     "sha256":  "330c4b1cf4de3b49500c412d925a5aab35c21d5c76e6291f885ac4566f03e012",
+                     "sha256":  "7fa81f558589a1418ba1ed3204ff815a5f477fad784aa1693cac74ba72a793ad",
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/darkmobs-forge-1.20.1-1.0.6.jar"
                  },
                  {
@@ -492,6 +492,12 @@
                      "file":  "deco-storage-forge-1.20.1-1.1204.jar",
                      "sha256":  "e703845f7413848b05154c572577c3c262c033cb83efd0e2b4fbdbdcb07c389b",
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/deco-storage-forge-1.20.1-1.1204.jar"
+                 },
+                 {
+                     "id":  "deeperdarker",
+                     "file":  "deeperdarker-forge-1.20.1-1.3.3.jar",
+                     "sha256":  "d07dc6155e0b751c7d1ec26dabb7284a41798c85e48b0d809fd1254e489ed455",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/deeperdarker-forge-1.20.1-1.3.3.jar"
                  },
                  {
                      "id":  "drippyloadingscreen-3.0.1_mc",
@@ -1070,6 +1076,12 @@
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/MOAdecor%20ELECTRONICS%201.20.1.A.jar"
                  },
                  {
+                     "id":  "mob_grinding_utils",
+                     "file":  "mob_grinding_utils-1.20.1-1.1.0.jar",
+                     "sha256":  "6e0fa6a245fd56cce99d60ac908b5028bc6392a59833c45e0bc3e27ec7f0a2f9",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/mob_grinding_utils-1.20.1-1.1.0.jar"
+                 },
+                 {
                      "id":  "mobstrength",
                      "file":  "mobstrength-1.20.1-1.1.1.jar",
                      "sha256":  "eb7dbf96301a99ee120dbaefb4711e650c62ecff74c784f2ac04b27ccc746f93",
@@ -1086,6 +1098,18 @@
                      "file":  "monolib-forge-1.20.1-1.1.0.jar",
                      "sha256":  "846a6776bd02d0cecd9bd41024064895acb90653838a7cf6c8c624c4a7e7f02d",
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/monolib-forge-1.20.1-1.1.0.jar"
+                 },
+                 {
+                     "id":  "moogsstructurelib",
+                     "file":  "MoogsStructureLib-forge-1.20-3.4.2.jar",
+                     "sha256":  "e608ce2e206b5cca513ab1b79a5eba40237e65d910998118041277909d5488b9",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/MoogsStructureLib-forge-1.20-3.4.2.jar"
+                 },
+                 {
+                     "id":  "moogsvoyagerstructures-universal",
+                     "file":  "MoogsVoyagerStructures-universal-1.20-5.1.3.jar",
+                     "sha256":  "94cbcbea535729eab2f33bfb7fe27428cb18a3d294ad117a71c263857226f1ee",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/MoogsVoyagerStructures-universal-1.20-5.1.3.jar"
                  },
                  {
                      "id":  "moonlight-1.20-2.11.31",
@@ -1268,12 +1292,6 @@
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/realmrpg_quests-0.1.1-forge-1.20.1.jar"
                  },
                  {
-                     "id":  "reblured",
-                     "file":  "Reblured-1.20.1-1.3.0.jar",
-                     "sha256":  "951e1c811b83b5377676e41aa9eb22b18c08c5f088691b0989aef881654e385d",
-                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/Reblured-1.20.1-1.3.0.jar"
-                 },
-                 {
                      "id":  "refinedpolymorph",
                      "file":  "refinedpolymorph-0.1.1-1.20.1.jar",
                      "sha256":  "39e4312a999aa686f3c91095dce424538708764be6d108634cf658647620f826",
@@ -1418,6 +1436,12 @@
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/starterkit-1.20.1-6.7.jar"
                  },
                  {
+                     "id":  "storagedrawers",
+                     "file":  "StorageDrawers-forge-1.20.1-12.15.1.jar",
+                     "sha256":  "5b9fc30a0c7988292bf169ce4a1379f304c97cda3fc7a226d98c2faeac0c07b8",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/StorageDrawers-forge-1.20.1-12.15.1.jar"
+                 },
+                 {
                      "id":  "structory_towers_1.20.x",
                      "file":  "Structory_Towers_1.20.x_v1.0.7.jar",
                      "sha256":  "74aa182524af55e172d7bfcf828dd1c1a3259a304980e7a94fbfbf1f0d9fac0c",
@@ -1446,6 +1470,12 @@
                      "file":  "supplementaries-1.20-2.8.11.jar",
                      "sha256":  "be40e23943dc177b40d4464e96d14145da2d7c089673358b6be793ef2e7fd622",
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/supplementaries-1.20-2.8.11.jar"
+                 },
+                 {
+                     "id":  "tacz",
+                     "file":  "tacz-forge-1.20.1-1.2.0.jar",
+                     "sha256":  "7ff43861865fc35510d82286f66bb72885f72e8c92b89d781b21d1003bf4529b",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/tacz-forge-1.20.1-1.2.0.jar"
                  },
                  {
                      "id":  "tempad",
@@ -1536,6 +1566,12 @@
                      "file":  "TravelersTitles-1.20-Forge-4.0.2.jar",
                      "sha256":  "e72bcce5e31ab2d5f09eff53697969b32e56c35801b3014e03d558b442b9d38b",
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/TravelersTitles-1.20-Forge-4.0.2.jar"
+                 },
+                 {
+                     "id":  "twilightforest-1.20.1-4.3.2508-universal",
+                     "file":  "twilightforest-1.20.1-4.3.2508-universal.jar",
+                     "sha256":  "0bdc89263616d1b35c32ef82c5e9c14cbd20368e2fe8b468c72a28320be7a778",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/twilightforest-1.20.1-4.3.2508-universal.jar"
                  },
                  {
                      "id":  "uncrafter",
@@ -1650,6 +1686,12 @@
                      "file":  "YungsBetterOceanMonuments-1.20-Forge-3.0.4.jar",
                      "sha256":  "bea2640c4afeb5231362a756d886ca4f246c7951175c91348272b3ce5d483bae",
                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/YungsBetterOceanMonuments-1.20-Forge-3.0.4.jar"
+                 },
+                 {
+                     "id":  "yungsbetterstrongholds",
+                     "file":  "YungsBetterStrongholds-1.20-Forge-4.0.3.jar",
+                     "sha256":  "054b0a1be86510ed6bd05de66a29200f13f5603c0c9eb7e62074ddc3d19cb0e4",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/YungsBetterStrongholds-1.20-Forge-4.0.3.jar"
                  },
                  {
                      "id":  "zenith",
@@ -2292,31 +2334,31 @@
                   {
                       "id":  "config-attributefix-json",
                       "path":  "config/attributefix.json",
-                      "sha256":  "8c15ea282c8e52c9f9b68ec61d6ae014a57e6641ca9fa3c705c48d7369792636",
+                      "sha256":  "556def09101e197af9a25ca4effb7cfeaec4cd9a9a403c823fa2756b1aa9c07f",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/attributefix.json"
                   },
                   {
                       "id":  "config-awesomedungeon_1-properties",
                       "path":  "config/awesomedungeon_1.properties",
-                      "sha256":  "864eab23916055c791a24143fd0331c47a55b5f7d094f6272fe34d1e654865a9",
+                      "sha256":  "7d394724081d656fa43271a563da9fca656d9c527720058765811ff996180e42",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/awesomedungeon_1.properties"
                   },
                   {
                       "id":  "config-awesomedungeonend_1-properties",
                       "path":  "config/awesomedungeonend_1.properties",
-                      "sha256":  "a8d344a9c875e0007453cdd89aa9c08bac50417fd39ba1d96e5df1c231ef8ed0",
+                      "sha256":  "56b0897b9b701bfd9b837708d3b19944f2c0add4808a32a6b56be9a4313d339c",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/awesomedungeonend_1.properties"
                   },
                   {
                       "id":  "config-awesomedungeonnether_1-properties",
                       "path":  "config/awesomedungeonnether_1.properties",
-                      "sha256":  "4c9bbde306d4d902b89765f7d0cf7e3f49e6b8376d8ab0024f2673c6d416155c",
+                      "sha256":  "43c11e2ceefcbb34e5a7a40fe3bd4240e70231be6abe356dcd3b5fb51271f0d3",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/awesomedungeonnether_1.properties"
                   },
                   {
                       "id":  "config-awesomedungeonocean_1-properties",
                       "path":  "config/awesomedungeonocean_1.properties",
-                      "sha256":  "eea5e62f491fc1a790082597fab21b5d2970d3943a9133bf23f37f030338dffc",
+                      "sha256":  "f8b868ebd04b4ff13bc65a57b406984640a1f80fb18fd044973084d2c17178a0",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/awesomedungeonocean_1.properties"
                   },
                   {
@@ -2452,6 +2494,48 @@
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/betterpingdisplay-client.toml"
                   },
                   {
+                      "id":  "config-betterstrongholds-forge-1_20-armorstands-json",
+                      "path":  "config/betterstrongholds/forge-1_20/armorstands.json",
+                      "sha256":  "a3f0c36622b595cb5311dd9e34ce2c798cfb30af590b0108a82c9ce8bf29f4e5",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/betterstrongholds/forge-1_20/armorstands.json"
+                  },
+                  {
+                      "id":  "config-betterstrongholds-forge-1_20-itemframes-json",
+                      "path":  "config/betterstrongholds/forge-1_20/itemframes.json",
+                      "sha256":  "5e4e7eb5e5d857788a48d812762a7e9faa46f6de2ede9f9b667dcd725e539d76",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/betterstrongholds/forge-1_20/itemframes.json"
+                  },
+                  {
+                      "id":  "config-betterstrongholds-forge-1_20-ores-json",
+                      "path":  "config/betterstrongholds/forge-1_20/ores.json",
+                      "sha256":  "0c1a00498bd64368043193c86e595e8b114c645c4c5054d258668df5ec47b166",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/betterstrongholds/forge-1_20/ores.json"
+                  },
+                  {
+                      "id":  "config-betterstrongholds-forge-1_20-rareblocks-json",
+                      "path":  "config/betterstrongholds/forge-1_20/rareblocks.json",
+                      "sha256":  "7a5becc44b3e2b1b1e9d481f8661350bc9ebc96e80289f473fc710073d6217d4",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/betterstrongholds/forge-1_20/rareblocks.json"
+                  },
+                  {
+                      "id":  "config-betterstrongholds-forge-1_20-readme-txt",
+                      "path":  "config/betterstrongholds/forge-1_20/README.txt",
+                      "sha256":  "5aad271e60a03218eb5207dd78df8d1d36c676f212bf823701e33646010d2f19",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/betterstrongholds/forge-1_20/README.txt"
+                  },
+                  {
+                      "id":  "config-betterstrongholds-forge-1_20-toml",
+                      "path":  "config/betterstrongholds-forge-1_20.toml",
+                      "sha256":  "b1a6d4c96bbfc7bd824427d25bcf41a3e165f156c61eb5fa5351928474a7a635",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/betterstrongholds-forge-1_20.toml"
+                  },
+                  {
+                      "id":  "config-betterstrongholds-readme-txt",
+                      "path":  "config/betterstrongholds/README.txt",
+                      "sha256":  "13c5f6bd52bf778533a100453d8b295802f923109e0a2951446a00674113700b",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/betterstrongholds/README.txt"
+                  },
+                  {
                       "id":  "config-betterthirdperson-common-toml",
                       "path":  "config/betterthirdperson-common.toml",
                       "sha256":  "1cae9855e777afbbdca5cd858bc66d10069c902fbd1b8d073cbedace3fa71779",
@@ -2472,7 +2556,7 @@
                   {
                       "id":  "config-bettervillage_1-properties",
                       "path":  "config/bettervillage_1.properties",
-                      "sha256":  "c14740e625d9dcb9b83fa6ce10b330d2dd4719303b4e9ccf86053236426badfb",
+                      "sha256":  "cef416017e85392d5383e0108b3cc4bbd9de8c84e15455ef2dec4358bc14de5f",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/bettervillage_1.properties"
                   },
                   {
@@ -2752,6 +2836,12 @@
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/curios-common.toml"
                   },
                   {
+                      "id":  "config-deeperdarker-common-toml",
+                      "path":  "config/deeperdarker-common.toml",
+                      "sha256":  "456c664072bff23a9d6a45a571d6a09f4b4be2c0ad0423281894d836a4f679a7",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/deeperdarker-common.toml"
+                  },
+                  {
                       "id":  "config-drippyloadingscreen-options-txt",
                       "path":  "config/drippyloadingscreen/options.txt",
                       "sha256":  "80ed128a0e856c1d2cf85164d65366dc0c3d14813009401f030ed29143be48e5",
@@ -3000,13 +3090,13 @@
                   {
                       "id":  "config-enigmaticlegacy-client-omniconf",
                       "path":  "config/enigmaticlegacy-client.omniconf",
-                      "sha256":  "2c80cf35365600970be64242726a13ce3391b6b21ec6fbd375af1918d98cb958",
+                      "sha256":  "e1cb43ef81ed88cc32d5f3d2323f1b2c1ac31b796870a43c73efa60b8788475e",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/enigmaticlegacy-client.omniconf"
                   },
                   {
                       "id":  "config-enigmaticlegacy-common-omniconf",
                       "path":  "config/enigmaticlegacy-common.omniconf",
-                      "sha256":  "be5967f7d9c75b703922dbc84e462a77a292dacc819dbbbdc72dbfbd757c2505",
+                      "sha256":  "9bc57f4b898ba4872e63088e575e050b0e908f6dd6b929020339dbbfbb4cccfc",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/enigmaticlegacy-common.omniconf"
                   },
                   {
@@ -3318,7 +3408,7 @@
                   {
                       "id":  "config-hammerlib-recipes-modded-solarflux-json",
                       "path":  "config/hammerlib/recipes/modded/solarflux.json",
-                      "sha256":  "1aef9883f387e3e8ddddbff09fc6037fcb3a85229682440ad6056e74b59f7f8c",
+                      "sha256":  "9dec92804183e215b80cd041aa5fea8ddf902a463355c7b097bc961c48b97b65",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/hammerlib/recipes/modded/solarflux.json"
                   },
                   {
@@ -3360,7 +3450,7 @@
                   {
                       "id":  "config-improvedmobs-common-toml",
                       "path":  "config/improvedmobs/common.toml",
-                      "sha256":  "f956dfff0541edd4c0545f215fb4ad42bad187bb5cdb02f2f94d86733273b99d",
+                      "sha256":  "2ac67fd81648b3b0c73f4d9d4a18f6a0eaa5337a8db6310b2c1254fafeeebd52",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/improvedmobs/common.toml"
                   },
                   {
@@ -3372,13 +3462,13 @@
                   {
                       "id":  "config-inventoryhud-client-toml",
                       "path":  "config/inventoryhud-client.toml",
-                      "sha256":  "974e259b06f1d11c5a1e957020837e3a8eb09b8c9396c70f8cbbe281434d863c",
+                      "sha256":  "0f37244e88d68b1e977284027c6c1a1d8ab01e06134d1528795836baed55da9f",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/inventoryhud-client.toml"
                   },
                   {
                       "id":  "config-inventoryhud-curios-json",
                       "path":  "config/InventoryHUD/curios.json",
-                      "sha256":  "3f3bdc293c1eb2df51773dc1512aee8af9e48c1a0ee997f1ce3d8e2204735587",
+                      "sha256":  "e0d9b008322ae06352b6112f056582e97afed4bc9f18af0a96d39bf23c150c41",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/InventoryHUD/curios.json"
                   },
                   {
@@ -3444,7 +3534,7 @@
                   {
                       "id":  "config-jade-plugins-json",
                       "path":  "config/jade/plugins.json",
-                      "sha256":  "02b48ef22c57cbf541de82947f019ff0c32395f9d1e8cfdeb38d76618c4360f9",
+                      "sha256":  "ce58d06e23519bf2e62d1cdf7098b73d66b3d89231c21046cf262f2bd1157c3f",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/jade/plugins.json"
                   },
                   {
@@ -3456,7 +3546,7 @@
                   {
                       "id":  "config-jade-sort-order-json",
                       "path":  "config/jade/sort-order.json",
-                      "sha256":  "bc940fd4530cd61c922719d5d521b9c9cddf18de0959df6f1030db50e1cf98ee",
+                      "sha256":  "bb722964bed07c572ed36fafadeaae8184a75aab6c699fd2c6248f6973e6b78a",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/jade/sort-order.json"
                   },
                   {
@@ -3468,13 +3558,13 @@
                   {
                       "id":  "config-jei-ingredient-list-mod-sort-order-ini",
                       "path":  "config/jei/ingredient-list-mod-sort-order.ini",
-                      "sha256":  "a2f0b8bb5c1e36067844c1662c630b0a9890e7fb7eacf732a60da17873c7b8f0",
+                      "sha256":  "12ba214a1240f97332f2f2582b8b9c3bc0289d89ff1e03c41f33fba999558645",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/jei/ingredient-list-mod-sort-order.ini"
                   },
                   {
                       "id":  "config-jei-ingredient-list-type-sort-order-ini",
                       "path":  "config/jei/ingredient-list-type-sort-order.ini",
-                      "sha256":  "ca6f0515891afed86c30c9d3d8ad1496a7d03de9ea532ab431f2ec1d3968826b",
+                      "sha256":  "b6c288f4e01f5780aba810bee0734a0e908a53b22fe2eab06a798f6be484b24f",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/jei/ingredient-list-type-sort-order.ini"
                   },
                   {
@@ -3504,7 +3594,7 @@
                   {
                       "id":  "config-jei-recipe-category-sort-order-ini",
                       "path":  "config/jei/recipe-category-sort-order.ini",
-                      "sha256":  "36f344d14f43d093c867af14c793c2a2fa569e55d27442da6a8a76af8327ee4d",
+                      "sha256":  "6cc792e8c27693e68bad96f3980d5531e45f6eb12b7950b038edf1579a43ffb8",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/jei/recipe-category-sort-order.ini"
                   },
                   {
@@ -3600,7 +3690,7 @@
                   {
                       "id":  "config-libraryferret_1-properties",
                       "path":  "config/libraryferret_1.properties",
-                      "sha256":  "9daccb230fcc937582d5112a7d1c9626cce4e9abb6f3501534af2f84636d1cce",
+                      "sha256":  "c208528fed5b27fa700d3d8f3e914961d603ebc4f07d7a22e344e4fbe7fd70c0",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/libraryferret_1.properties"
                   },
                   {
@@ -3642,7 +3732,7 @@
                   {
                       "id":  "config-mobstrength-common-toml",
                       "path":  "config/mobstrength-common.toml",
-                      "sha256":  "2969ef61b2be2b65e9167e6307ffe52bc3d7711f303d7e7198c4e152522520b5",
+                      "sha256":  "bec44d1533fb64cbc7b06cb15495972cc668b4a35c0ae1e0d18597070229678b",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/mobstrength-common.toml"
                   },
                   {
@@ -3656,6 +3746,12 @@
                       "path":  "config/modernfix-mixins.properties",
                       "sha256":  "01468d411d75f75d505305e4b92f04d11019031314aa4a5e369a934d936bfba2",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/modernfix-mixins.properties"
+                  },
+                  {
+                      "id":  "config-moogs_structures-json",
+                      "path":  "config/moogs_structures.json",
+                      "sha256":  "c3516a4b53c902c0533869f7e0a83401a5273d75d4c92eab77a24ddb8f3374b8",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/moogs_structures.json"
                   },
                   {
                       "id":  "config-moonlight-client-toml",
@@ -3756,7 +3852,7 @@
                   {
                       "id":  "config-oculus-properties",
                       "path":  "config/oculus.properties",
-                      "sha256":  "830515792dc00fa5b462c816332776535c71965218d86dceb704e0d243cf76f5",
+                      "sha256":  "adfcba51b093a3a489160300538a9a68e25ff5e0bb88956a1ba1562efec5bc45",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/oculus.properties"
                   },
                   {
@@ -4024,12 +4120,6 @@
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/realmrpg/quests/monster_hunter.json"
                   },
                   {
-                      "id":  "config-reblured-client-toml",
-                      "path":  "config/reblured-client.toml",
-                      "sha256":  "d650c3f0fbac24f7b21dd51a54b4fab1fdb61e99d65126637039001b75a6326c",
-                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/reblured-client.toml"
-                  },
-                  {
                       "id":  "config-refinedstorage-client-toml",
                       "path":  "config/refinedstorage-client.toml",
                       "sha256":  "fd1f877e3c69df8662b8ffa2bd922c80da850ad1ae033591c36480c72b2a9f33",
@@ -4096,6 +4186,12 @@
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/simplebackups-common.toml"
                   },
                   {
+                      "id":  "config-simplebedrockmodel-client-toml",
+                      "path":  "config/simplebedrockmodel-client.toml",
+                      "sha256":  "e25e5b2dcf6783dd0d8ae8b90989b8bd2f70692240b67ba4dad3d1e471191a44",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/simplebedrockmodel-client.toml"
+                  },
+                  {
                       "id":  "config-simplehats-client-toml",
                       "path":  "config/simplehats-client.toml",
                       "sha256":  "e31bd569552eb9da2acdfc68e4c2668655391ffc5f9b4970566a3a7fb4a376cf",
@@ -4158,13 +4254,13 @@
                   {
                       "id":  "config-solarflux-panels-cfg",
                       "path":  "config/solarflux/panels.cfg",
-                      "sha256":  "aa52e63a94e683d65bc7b8c93d5d823469bbb705cdc0021749f2d880b661ca7c",
+                      "sha256":  "653e77d28fcb8b640670251a847433055bb5a4acdd9b74244faf966b0dc9cede",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/solarflux/panels.cfg"
                   },
                   {
                       "id":  "config-solarflux-recipes-cfg",
                       "path":  "config/solarflux/recipes.cfg",
-                      "sha256":  "9926f94c4ec43efc49ce2e70c95545af4bddc27241f3ac1d3c5d48c475523bc0",
+                      "sha256":  "95bdc6a06b75e82b3f0109f228acd48813713ab53ed74d3c2b32512651be4204",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/solarflux/recipes.cfg"
                   },
                   {
@@ -4206,19 +4302,19 @@
                   {
                       "id":  "config-sound_physics_remastered-allowed_sounds-properties",
                       "path":  "config/sound_physics_remastered/allowed_sounds.properties",
-                      "sha256":  "86bf7646267f8eeb43f4715be6fa65eef7ed76fc9149ef41520baacfdadbb977",
+                      "sha256":  "0dc8e849d2937d247b3a4856dea915fb0cad7433149a2015e8b04f57eeba9df5",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/sound_physics_remastered/allowed_sounds.properties"
                   },
                   {
                       "id":  "config-sound_physics_remastered-occlusion-properties",
                       "path":  "config/sound_physics_remastered/occlusion.properties",
-                      "sha256":  "60a7b8e12f15590976a717aee1386b6c9f8d2c624c1b24529c2fa84924f2798a",
+                      "sha256":  "8ddb22c3982a60b3356d22efeb42115c72904d56c3f9cdaddc6ca9b4207d6fd9",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/sound_physics_remastered/occlusion.properties"
                   },
                   {
                       "id":  "config-sound_physics_remastered-reflectivity-properties",
                       "path":  "config/sound_physics_remastered/reflectivity.properties",
-                      "sha256":  "87d825494194a711e54175fa35f263016ddcc35404ab85de13bc0419610d06a5",
+                      "sha256":  "b41f5543fb94b3fa31b81745d40d273cce136e3febbe99edbf58c7edcb25cdc3",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/sound_physics_remastered/reflectivity.properties"
                   },
                   {
@@ -4246,6 +4342,18 @@
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/starterkit/kits/Default.txt"
                   },
                   {
+                      "id":  "config-storagedrawers-client-toml",
+                      "path":  "config/storagedrawers-client.toml",
+                      "sha256":  "5281de138529e2f84fb537c78dd5b12907cdb95b8e3b13d006d16284fa082005",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/storagedrawers-client.toml"
+                  },
+                  {
+                      "id":  "config-storagedrawers-common-v2-toml",
+                      "path":  "config/storagedrawers-common.v2.toml",
+                      "sha256":  "8117dc9f645bd483b27c0004800ab6927ebf3a663bc06da6bd280e3030bfe069",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/storagedrawers-common.v2.toml"
+                  },
+                  {
                       "id":  "config-structure_gel-client-toml",
                       "path":  "config/structure_gel-client.toml",
                       "sha256":  "c53c5d639db55786a899f1eeaef133efa78ccf5e841b5ffcf8d4a40f714de947",
@@ -4268,6 +4376,18 @@
                       "path":  "config/supplementaries-common.toml",
                       "sha256":  "649ab685de143f62bf0e2a52f88b157826f2180492528c9e345602ce22a8d1fa",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/supplementaries-common.toml"
+                  },
+                  {
+                      "id":  "config-tacz-client-toml",
+                      "path":  "config/tacz-client.toml",
+                      "sha256":  "42477fba94adca77dd4ff317c29ddf97abbd1f95f99994b26c24cd5690d580e5",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/tacz-client.toml"
+                  },
+                  {
+                      "id":  "config-tacz-common-toml",
+                      "path":  "config/tacz-common.toml",
+                      "sha256":  "96c1430633d0e838580f14b97179a34b79e9866a3b2af9ee89987e4c6c63353b",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/tacz-common.toml"
                   },
                   {
                       "id":  "config-tempad-client-jsonc",
@@ -4330,6 +4450,18 @@
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/travelerstitles-forge-1_20.toml"
                   },
                   {
+                      "id":  "config-twilightforest-client-toml",
+                      "path":  "config/twilightforest-client.toml",
+                      "sha256":  "77e7aacadc5d425ebe3f19b78bb8af526a589134877c8406244a52108c4697a0",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/twilightforest-client.toml"
+                  },
+                  {
+                      "id":  "config-twilightforest-common-toml",
+                      "path":  "config/twilightforest-common.toml",
+                      "sha256":  "ae4d9b6a2f63f37de7630a0bc4333e3ab682a6fa713347dae899ffe512a6b9f5",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/twilightforest-common.toml"
+                  },
+                  {
                       "id":  "config-uncrafter-jsonc",
                       "path":  "config/uncrafter.jsonc",
                       "sha256":  "50eed292588067f63d3328001572a2fdca72de60571af7a613d6b41ecad59ced",
@@ -4376,6 +4508,12 @@
                       "path":  "config/zeta-common.toml",
                       "sha256":  "b5ae0f1685b3136c29758855f06e1eb4fa9878ef78d25b7adcbcd88391074c86",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/zeta-common.toml"
+                  },
+                  {
+                      "id":  "defaultconfigs-ftbessentials-server-snbt",
+                      "path":  "defaultconfigs/ftbessentials-server.snbt",
+                      "sha256":  "b4864f78b6d0646c8dd6f6bbc37d893b5e2681faae72781140c6fb81cd09424d",
+                      "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/defaultconfigs/ftbessentials-server.snbt"
                   },
                   {
                       "id":  "defaultconfigs-ftblibrary-ftblibrary-client-snbt",
@@ -5262,7 +5400,7 @@
                   {
                       "id":  "fancymenu_data-last_world-fmdata",
                       "path":  "fancymenu_data/last_world.fmdata",
-                      "sha256":  "ef81b45fd44f3316736cfbeda9d226311d49be673ac2b58313e15204b9e6b8f1",
+                      "sha256":  "5a5663e11959fe7648eab51c74c2844f4b165c60d685a1fbd680df84526df8fb",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/fancymenu_data/last_world.fmdata"
                   },
                   {
@@ -5274,43 +5412,43 @@
                   {
                       "id":  "journeymap-config-5-9-journeymap-core-config",
                       "path":  "journeymap/config/5.9/journeymap.core.config",
-                      "sha256":  "7b1c6c65f307da0dd19e312065a4ee2203c849d349eb8cb47365a3b6ec6f06ff",
+                      "sha256":  "3badd883ab91376040ce02772dd444aa4a9dea77368e25be70bf988458e198eb",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.core.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-fullmap-config",
                       "path":  "journeymap/config/5.9/journeymap.fullmap.config",
-                      "sha256":  "cbb4b9cdf29c09c8654e6688c59a4f6db0a88c2b11e3621daf9f3e57e949be57",
+                      "sha256":  "411e9c5e2d86da52f929588375e8a1c92d4a8411944b630ba8e8212199723e60",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.fullmap.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-minimap2-config",
                       "path":  "journeymap/config/5.9/journeymap.minimap2.config",
-                      "sha256":  "7565418a10050d3be4ddea2f65f42d7c7600adb2378af51b5dfc3f69c2f2913f",
+                      "sha256":  "00d7195a12d565a8ff2c50d37bb0d69f42895e4453ac5cc5f021c7c0b68319be",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.minimap2.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-minimap-config",
                       "path":  "journeymap/config/5.9/journeymap.minimap.config",
-                      "sha256":  "5ac6bede206e39f097f9701bc00453f379d91b446d489d18fe14cf7d4adf643d",
+                      "sha256":  "855ed95d0c1468c2dde85ccd9809b65206276ffbd69c99ff8655f6384e4db1fb",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.minimap.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-topo-config",
                       "path":  "journeymap/config/5.9/journeymap.topo.config",
-                      "sha256":  "39e575372e1ad072988c55c78b0c7323a139f68a36ca4b0447c65f01d78c4725",
+                      "sha256":  "22e74ae5e51066f353d7de4b226245b58ed410943df3094f05f33e7f64b5cef1",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.topo.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-waypoint-config",
                       "path":  "journeymap/config/5.9/journeymap.waypoint.config",
-                      "sha256":  "8463bf7395d0e8078fa824efd0d864f7511b82391892b12b23b0d7ab75e954f2",
+                      "sha256":  "0011442367a0b2afea8ad5ac748a5db612be49ccad0d306f29d5319fc6b33b5c",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.waypoint.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-webmap-config",
                       "path":  "journeymap/config/5.9/journeymap.webmap.config",
-                      "sha256":  "0df3c4a9af15f1a8b91c172959e88adf8b3cfaa8c25b88c387d04088c99d71bc",
+                      "sha256":  "e7b1ab8f6ec6a6c14bda74ef94436f12c95e6b486507b3de210676f659e240d2",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.webmap.config"
                   },
                   {
@@ -5346,7 +5484,7 @@
                   {
                       "id":  "options-txt",
                       "path":  "options.txt",
-                      "sha256":  "ce0f5a18eddebcce20d02b37d8a92770eecf3c52a3edd498f8049ac4844ef72a",
+                      "sha256":  "360db711939ad7eadd6016131981a71a129dc1b3b11b7d3025252023a68a1f09",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/options.txt"
                   },
                   {

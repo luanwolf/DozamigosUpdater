@@ -86,13 +86,13 @@
 	invValign = "BOTTOM"
 	#Inventory HUD horizontal align
 	#Allowed Values: LEFT, MIDDLE, RIGHT
-	invHalign = "MIDDLE"
+	invHalign = "LEFT"
 	#Inventory HUD position (X)
 	#Range: -9999 ~ 9999
-	xPos = 0
+	xPos = 198
 	#Inventory HUD position (Y)
 	#Range: -9999 ~ 9999
-	yPos = 113
+	yPos = 53
 	#Armor HUD vertical align
 	#Allowed Values: TOP, CENTER, BOTTOM
 	armValign = "BOTTOM"
@@ -104,19 +104,19 @@
 	xArmPos = -138
 	#Armor HUD position (Y)
 	#Range: -9999 ~ 9999
-	yArmPos = 73
+	yArmPos = 71
 	#Potion HUD vertical align
 	#Allowed Values: TOP, CENTER, BOTTOM
 	potValign = "TOP"
 	#Potion HUD horizontal align
 	#Allowed Values: LEFT, MIDDLE, RIGHT
-	potHalign = "RIGHT"
+	potHalign = "LEFT"
 	#Potion HUD position (X)
 	#Range: -9999 ~ 9999
-	xPotionPos = 62
+	xPotionPos = 1
 	#Potion HUD position (Y)
 	#Range: -9999 ~ 9999
-	yPotionPos = 3
+	yPotionPos = 13
 	#Helmet position (X)
 	#Range: -9999 ~ 9999
 	helmPosX = 103

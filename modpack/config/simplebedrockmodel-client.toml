@@ -1,0 +1,6 @@
+
+[worldMesh]
+	#Strategy for supported world mesh groups: AUTO, INSTANCE, SECTION. Commands update this setting.
+	#Allowed Values: AUTO, INSTANCE, SECTION
+	strategy = "AUTO"
+
