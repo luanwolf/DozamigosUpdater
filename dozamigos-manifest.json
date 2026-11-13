@@ -3090,13 +3090,13 @@
                   {
                       "id":  "config-enigmaticlegacy-client-omniconf",
                       "path":  "config/enigmaticlegacy-client.omniconf",
-                      "sha256":  "e1cb43ef81ed88cc32d5f3d2323f1b2c1ac31b796870a43c73efa60b8788475e",
+                      "sha256":  "2c80cf35365600970be64242726a13ce3391b6b21ec6fbd375af1918d98cb958",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/enigmaticlegacy-client.omniconf"
                   },
                   {
                       "id":  "config-enigmaticlegacy-common-omniconf",
                       "path":  "config/enigmaticlegacy-common.omniconf",
-                      "sha256":  "9bc57f4b898ba4872e63088e575e050b0e908f6dd6b929020339dbbfbb4cccfc",
+                      "sha256":  "be5967f7d9c75b703922dbc84e462a77a292dacc819dbbbdc72dbfbd757c2505",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/config/enigmaticlegacy-common.omniconf"
                   },
                   {
@@ -5412,43 +5412,43 @@
                   {
                       "id":  "journeymap-config-5-9-journeymap-core-config",
                       "path":  "journeymap/config/5.9/journeymap.core.config",
-                      "sha256":  "3badd883ab91376040ce02772dd444aa4a9dea77368e25be70bf988458e198eb",
+                      "sha256":  "7b1c6c65f307da0dd19e312065a4ee2203c849d349eb8cb47365a3b6ec6f06ff",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.core.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-fullmap-config",
                       "path":  "journeymap/config/5.9/journeymap.fullmap.config",
-                      "sha256":  "411e9c5e2d86da52f929588375e8a1c92d4a8411944b630ba8e8212199723e60",
+                      "sha256":  "cbb4b9cdf29c09c8654e6688c59a4f6db0a88c2b11e3621daf9f3e57e949be57",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.fullmap.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-minimap2-config",
                       "path":  "journeymap/config/5.9/journeymap.minimap2.config",
-                      "sha256":  "00d7195a12d565a8ff2c50d37bb0d69f42895e4453ac5cc5f021c7c0b68319be",
+                      "sha256":  "7565418a10050d3be4ddea2f65f42d7c7600adb2378af51b5dfc3f69c2f2913f",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.minimap2.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-minimap-config",
                       "path":  "journeymap/config/5.9/journeymap.minimap.config",
-                      "sha256":  "855ed95d0c1468c2dde85ccd9809b65206276ffbd69c99ff8655f6384e4db1fb",
+                      "sha256":  "5ac6bede206e39f097f9701bc00453f379d91b446d489d18fe14cf7d4adf643d",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.minimap.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-topo-config",
                       "path":  "journeymap/config/5.9/journeymap.topo.config",
-                      "sha256":  "22e74ae5e51066f353d7de4b226245b58ed410943df3094f05f33e7f64b5cef1",
+                      "sha256":  "39e575372e1ad072988c55c78b0c7323a139f68a36ca4b0447c65f01d78c4725",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.topo.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-waypoint-config",
                       "path":  "journeymap/config/5.9/journeymap.waypoint.config",
-                      "sha256":  "0011442367a0b2afea8ad5ac748a5db612be49ccad0d306f29d5319fc6b33b5c",
+                      "sha256":  "8463bf7395d0e8078fa824efd0d864f7511b82391892b12b23b0d7ab75e954f2",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.waypoint.config"
                   },
                   {
                       "id":  "journeymap-config-5-9-journeymap-webmap-config",
                       "path":  "journeymap/config/5.9/journeymap.webmap.config",
-                      "sha256":  "e7b1ab8f6ec6a6c14bda74ef94436f12c95e6b486507b3de210676f659e240d2",
+                      "sha256":  "0df3c4a9af15f1a8b91c172959e88adf8b3cfaa8c25b88c387d04088c99d71bc",
                       "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/journeymap/config/5.9/journeymap.webmap.config"
                   },
                   {
