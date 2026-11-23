@@ -78,6 +78,39 @@ function Get-UrlPath([string]$relativePath) {
     }) -join '/'
 }
 
+# raw.githubusercontent.com serves LF. Hash (and rewrite) text files as LF so SHA matches download.
+function Get-PackFileHash([string]$path) {
+    $ext = [IO.Path]::GetExtension($path).ToLowerInvariant()
+    $binaryExt = @(
+        '.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.ico',
+        '.ogg', '.wav', '.mp3', '.zip', '.jar', '.nbt', '.dat', '.mca',
+        '.bin', '.ttf', '.otf', '.bbmodel', '.obj', '.mtl', '.glb', '.gltf',
+        '.pdf', '.7z', '.rar', '.exe', '.dll'
+    )
+    $bytes = [IO.File]::ReadAllBytes($path)
+    if (($binaryExt -contains $ext) -or ($bytes -contains 0)) {
+        return (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant()
+    }
+    $text = [Text.Encoding]::UTF8.GetString($bytes)
+    $normalized = ($text -replace "`r`n", "`n") -replace "`r", "`n"
+    $normBytes = [Text.Encoding]::UTF8.GetBytes($normalized)
+    if ($normBytes.Length -ne $bytes.Length) {
+        [IO.File]::WriteAllBytes($path, $normBytes)
+    } else {
+        $diff = $false
+        for ($i = 0; $i -lt $bytes.Length; $i++) {
+            if ($bytes[$i] -ne $normBytes[$i]) { $diff = $true; break }
+        }
+        if ($diff) { [IO.File]::WriteAllBytes($path, $normBytes) }
+    }
+    $sha = [Security.Cryptography.SHA256]::Create()
+    try {
+        return ([BitConverter]::ToString($sha.ComputeHash($normBytes)).Replace('-', '').ToLowerInvariant())
+    } finally {
+        $sha.Dispose()
+    }
+}
+
 function Get-ModId([string]$fileName, [hashtable]$overrides) {
     $base = [IO.Path]::GetFileNameWithoutExtension($fileName)
     if ($overrides.ContainsKey($base)) { return $overrides[$base] }
@@ -252,7 +285,7 @@ foreach ($f in ($packFiles | Sort-Object FullName)) {
     $fileIds[$id] = $rel
 
     Write-Progress -Activity "Hashing pack files" -Status $rel -PercentComplete (($j / [math]::Max($packFiles.Count, 1)) * 100)
-    $hash = (Get-FileHash -LiteralPath $f.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+    $hash = Get-PackFileHash $f.FullName
     $fileEntries.Add([pscustomobject]@{
         id = $id; path = $rel; sha256 = $hash; url = ($filesUrlBase + "/" + (Get-UrlPath $rel))
     }) | Out-Null
