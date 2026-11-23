@@ -10,6 +10,8 @@ mod_data
 defaultconfigs
 resourcepacks
 shaderpacks
+scripts
+tacz
 options.txt
 servers.dat
 icon.png

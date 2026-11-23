@@ -1,0 +1,16 @@
+{
+  "block.twilightforest.arctic_fur_block.desc": "Reduz o dano de queda em 90%",
+  "block.twilightforest.knightmetal_block.desc": "Funciona como um cacto mais forte",
+  "item.twilightforest.fiery_armor.desc": "Queima quem ataca",
+  "item.twilightforest.fiery_pickaxe.desc": "Funde automaticamente",
+  "item.twilightforest.fiery_sword.desc": "Queima os alvos",
+  "item.twilightforest.giant_pickaxe.desc": "Quebra blocos gigantes",
+  "item.twilightforest.glass_sword.desc": "Apenas no modo Criativo",
+  "item.twilightforest.knightmetal_axe.desc": "Dano extra contra alvos sem armadura",
+  "item.twilightforest.knightmetal_pickaxe.desc": "Dano extra contra alvos com armadura",
+  "item.twilightforest.knightmetal_sword.desc": "Dano extra contra alvos com armadura",
+  "item.twilightforest.minotaur_axe.desc": "Dano extra ao avançar",
+  "item.twilightforest.phantom_armor.desc": "Nunca se perde ao morrer",
+  "item.twilightforest.scepter.desc": "%s cargas restantes",
+  "item.twilightforest.yeti_armor.desc": "Congela quem ataca"
+}

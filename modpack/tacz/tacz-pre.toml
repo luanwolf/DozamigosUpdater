@@ -1,0 +1,7 @@
+
+[gunpack]
+	#Enable to preserve local default gun pack edits.
+	#When disabled, changes to the TACZ version or bundled resources trigger replacement at startup.
+	#To regenerate, disable this option, delete <game directory>/tacz/tacz_default_gun, then restart.
+	DefaultPackDebug = false
+

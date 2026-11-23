@@ -77,7 +77,7 @@
 	"block.cagedmobs.star_infused_netherite_block.beacon": "Pode ser usado como bloco base de farol.",
 	
 	"jei.category.cagedmobs.entity": "Drops de Entidades em Gaiolas",
-	"jei.tooltip.cagedmobs.entity.chance": "Chance: %d%%",
+	"jei.tooltip.cagedmobs.entity.chance": "Probabilidade: %d%%",
 	"jei.tooltip.cagedmobs.entity.growModifier": "Modificador de Crescimento: +%d%%",
 	"jei.tooltip.cagedmobs.entity.amountEqual": "Quantidade: %d",
 	"jei.tooltip.cagedmobs.entity.amount": "Quantidade: %d - %d",

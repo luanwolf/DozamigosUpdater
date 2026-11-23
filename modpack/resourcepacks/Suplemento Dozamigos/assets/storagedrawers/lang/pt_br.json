@@ -1,0 +1,16 @@
+{
+  "item.storagedrawers.hopper_upgrade.desc": "Coleta itens no mundo, como um funil",
+  "item.storagedrawers.magnet_upgrade.desc": "Coleta itens ao redor das gavetas",
+  "item.storagedrawers.push_upgrade.desc": "Empurra itens para um inventário adjacente",
+  "item.storagedrawers.pull_upgrade.desc": "Puxa itens de um inventário adjacente",
+  "item.storagedrawers.suspend_key.desc": "Pausa a entrada e saída do controlador\ne a maioria das ações das melhorias",
+  "item.storagedrawers.personal_key_ftb.desc": "Protege o acesso de outros jogadores\nPermite o acesso do seu time",
+  "item.storagedrawers.personal_key_unlock.desc": "Destranca qualquer gaveta trancada pela chave pessoal de outro jogador",
+  "item.storagedrawers.connection_key.desc": "Alterna o lado da gaveta entre os modos de entrada e saída\nAgache e clique para trocar a chave",
+  "item.storagedrawers.connection_key_input.desc": "Alterna o lado da gaveta para entrada\nAgache e clique para trocar a chave",
+  "item.storagedrawers.connection_key_output.desc": "Alterna o lado da gaveta para saída\nAgache e clique para trocar a chave",
+  "item.storagedrawers.connection_key_both.desc": "Alterna o lado da gaveta para entrada e saída\nAgache e clique para trocar a chave",
+  "item.storagedrawers.connection_key_none.desc": "Alterna o lado da gaveta para bloquear a entrada e a saída\nAgache e clique para trocar a chave",
+  "tooltip.storagedrawers.waila.suspended": "Pausado",
+  "tooltip.storagedrawers.waila.magnetic": "Magnético"
+}

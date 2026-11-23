@@ -9,6 +9,10 @@ config/dozamigos-client.toml
 journeymap/data/**
 journeymap/icon/**
 journeymap/web/**
+tacz/.export-state.json
+simplebackups/**
+config/simplebackups*
+**/assets/simplebackups/**
 *.log
 *.bak
 *.tmp
@@ -19,3 +23,4 @@ usercache.json
 minecraftinstance.json
 enigmatic_persistence.dat
 paragliderSettings.nbt
+modernfix/**

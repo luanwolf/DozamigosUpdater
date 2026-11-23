@@ -38,5 +38,6 @@
   "key.previous_image": "Imagem Anterior",
   "filetype.images": "Imagens",
   "title.choose_image": "Escolha a Imagem",
-  "sound.camera.take_image": "Camera tirando uma foto"
+  "sound.camera.take_image": "Camera tirando uma foto",
+  "jei.camera.tooltip.take_image": "Consome %sx %s do seu inventário ao tirar uma foto"
 }

@@ -1,1 +1,1 @@
-You can edit this description in ./config/starterkit/description/Default.txt!
+Couro completo, ferramentas de pedra, comida, tochas, saco de dormir, mochila, waystone, água e uma fogueira. O bastante para a primeira noite.

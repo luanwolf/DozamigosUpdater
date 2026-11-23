@@ -5,5 +5,5 @@ last_image_path = ""
 render_image_item = true
 #The opacity of the resize image frame GUI
 #Range: 0.0 ~ 1.0
-resize_gui_opacity = 1.0
+resize_gui_opacity = 0.5
 

@@ -1,5 +1,42 @@
 {
-  "bookGuiScale": 0,
+  "bookGuiScale": 4,
   "clickedVisualize": false,
-  "bookData": {}
+  "bookData": {
+    "dozamigosguide:dozamigos_guide": {
+      "viewedEntries": [
+        "dozamigosguide:primeiros/rota",
+        "dozamigosguide:atalhos/colheita",
+        "dozamigosguide:primeiros/dia_um",
+        "dozamigosguide:primeiros/jei",
+        "dozamigosguide:combate/curios",
+        "dozamigosguide:tecnologia/refined",
+        "dozamigosguide:tecnologia/farms",
+        "dozamigosguide:armazenamento/waystones",
+        "dozamigosguide:magia/eidolon",
+        "dozamigosguide:armazenamento/baus",
+        "dozamigosguide:fazenda/vasos",
+        "dozamigosguide:tecnologia/solar",
+        "dozamigosguide:exploracao/twilight",
+        "dozamigosguide:tecnologia/gadgets",
+        "dozamigosguide:combate/coracoes",
+        "dozamigosguide:magia/reliquary",
+        "dozamigosguide:fazenda/farmers",
+        "dozamigosguide:combate/armas",
+        "dozamigosguide:magia/irons",
+        "dozamigosguide:create/comeco",
+        "dozamigosguide:atalhos/bigorna",
+        "dozamigosguide:exploracao/mundo",
+        "dozamigosguide:create/energia",
+        "dozamigosguide:atalhos/arvores",
+        "dozamigosguide:armazenamento/decoracao",
+        "dozamigosguide:create/maquinas",
+        "dozamigosguide:atalhos/construcao",
+        "dozamigosguide:exploracao/chefes",
+        "dozamigosguide:magia/forbidden",
+        "dozamigosguide:tecnologia/flux"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    }
+  }
 }

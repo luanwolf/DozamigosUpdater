@@ -14,7 +14,7 @@
     "tooltip.botanypots.soil": "Solo: %s",
     "tooltip.botanypots.seed": "Semente: %s",
     "tooltip.botanypots.progress": "Progresso: ",
-    "tooltip.botanypots.chance": "Chance: %s",
+    "tooltip.botanypots.chance": "Probabilidade: %s",
     "tooltip.botanypots.rolls": "Jogadas: %s",
     "tooltip.botanypots.rollrange": "Jogadas: %s - %s",
     "tooltip.botanypots.grow_time": "Tempo de Crescimento: %s",

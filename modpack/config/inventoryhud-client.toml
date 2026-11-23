@@ -107,16 +107,16 @@
 	yArmPos = 71
 	#Potion HUD vertical align
 	#Allowed Values: TOP, CENTER, BOTTOM
-	potValign = "TOP"
+	potValign = "CENTER"
 	#Potion HUD horizontal align
 	#Allowed Values: LEFT, MIDDLE, RIGHT
-	potHalign = "LEFT"
+	potHalign = "RIGHT"
 	#Potion HUD position (X)
 	#Range: -9999 ~ 9999
-	xPotionPos = 1
+	xPotionPos = 65
 	#Potion HUD position (Y)
 	#Range: -9999 ~ 9999
-	yPotionPos = 13
+	yPotionPos = 50
 	#Helmet position (X)
 	#Range: -9999 ~ 9999
 	helmPosX = 103

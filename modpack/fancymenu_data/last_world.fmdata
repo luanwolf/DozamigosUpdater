@@ -1,7 +1,7 @@
 type = last_world
 
 last_world {
-  is_server = true
-  world = signaling-usability.tun.ply.gg:25565
+  is_server = false
+  world = C:/Users/Luan Wolf/curseforge/minecraft/Instances/update/saves/Novo mundo (1)
 }
 
