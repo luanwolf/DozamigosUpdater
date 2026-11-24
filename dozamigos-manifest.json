@@ -1,5 +1,5 @@
 {
-    "packVersion":  "1.0.8",
+    "packVersion":  "1.0.9",
     "mods":  [
                  {
                      "id":  "additional_lights",
@@ -507,9 +507,9 @@
                  },
                  {
                      "id":  "dozamigos",
-                     "file":  "dozamigos-1.0.11.jar",
-                     "sha256":  "7b69079e70cf4ac1da047c34e594b2966fcefbb6e0143ce32c747e5d610b297b",
-                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/dozamigos-1.0.11.jar"
+                     "file":  "dozamigos-1.0.12.jar",
+                     "sha256":  "0d93ac90e4e1825a6d6a53819c0723eb03fc2c03670e46b49cf23dce229ddd9b",
+                     "url":  "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods/dozamigos-1.0.12.jar"
                  },
                  {
                      "id":  "dozamigosguide",

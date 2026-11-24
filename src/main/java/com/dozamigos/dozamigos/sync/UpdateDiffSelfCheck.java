@@ -130,6 +130,21 @@ public final class UpdateDiffSelfCheck {
                 .filter(c -> c.oldFile() != null && c.oldFile().startsWith("dozamigosguide"))
                 .count(), "guide kept");
 
+        // prefixo curto nao pode apagar outro mod do manifest (cagedmobs vs cagedmobs-complementary)
+        Path cageMods = tmp.resolve("cage-mods");
+        Files.createDirectories(cageMods);
+        Files.write(cageMods.resolve("cagedmobs-1.20.1-forge-2.0.5.jar"), "main".getBytes(StandardCharsets.UTF_8));
+        Files.write(cageMods.resolve("cagedmobs-complementary-1.0.0.jar"), "comp".getBytes(StandardCharsets.UTF_8));
+        PackManifest cageManifest = new PackManifest();
+        cageManifest.packVersion = "6.0.1";
+        cageManifest.mods = List.of(
+                mod("cagedmobs", "cagedmobs-1.20.1-forge-2.0.5.jar", sha(cageMods.resolve("cagedmobs-1.20.1-forge-2.0.5.jar")), "http://x/cage"),
+                mod("cagedmobs-complementary", "cagedmobs-complementary-1.0.0.jar", sha(cageMods.resolve("cagedmobs-complementary-1.0.0.jar")), "http://x/comp")
+        );
+        cageManifest.files = List.of();
+        UpdatePlan cagePlan = UpdateDiff.compute(cageManifest, Map.of(), Map.of(), cageMods, tmp);
+        assertEq(0, cagePlan.changes().size(), "cagedmobs complementary not orphaned");
+
         System.out.println("UpdateDiffSelfCheck OK");
     }
 

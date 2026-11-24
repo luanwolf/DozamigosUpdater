@@ -168,6 +168,13 @@ public final class UpdateDiff {
         }
 
         // Jars orfaos com o mesmo id (ex.: dozamigos-1.0.8.jar apos subir 1.0.11), mesmo fora do managed.
+        // Nunca apagar um jar que o manifest ainda lista (cagedmobs-complementary casa com prefixo cagedmobs-).
+        Set<String> wantedFiles = new HashSet<>();
+        for (ModEntry m : remote.values()) {
+            if (m.file != null && !m.file.isBlank()) {
+                wantedFiles.add(m.file);
+            }
+        }
         Set<String> pendingDelete = new HashSet<>();
         for (ModChange c : changes) {
             if (c.target() == FileKind.MOD && c.oldFile() != null) {
@@ -182,7 +189,10 @@ public final class UpdateDiff {
                 try (DirectoryStream<Path> jars = Files.newDirectoryStream(modsDir, "*.jar")) {
                     for (Path jar : jars) {
                         String name = jar.getFileName().toString();
-                        if (name.equals(keep) || !name.startsWith(prefix) || pendingDelete.contains(name)) {
+                        if (wantedFiles.contains(name)
+                                || name.equals(keep)
+                                || !name.startsWith(prefix)
+                                || pendingDelete.contains(name)) {
                             continue;
                         }
                         changes.add(ModChange.removedMod(id, name));
