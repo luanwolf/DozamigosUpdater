@@ -1,8 +1,0 @@
-{
-  "slot": "tacz:attachment/slot/oem_m1897_bayonet",
-  "adapter": "bayonet",
-  "sounds": {
-    "install": "tacz:attachments/bayonet_install",
-    "uninstall": "tacz:attachments/bayonet_uninstall"
-  }
-}

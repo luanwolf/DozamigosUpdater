@@ -21,5 +21,9 @@ build
 eclipse
 run
 
+# FancyMenu/Konkrete compile stubs (copie dos mods da instance se faltar)
+# libs/*.jar fica versionado se pequeno; ignore caches locais
+libs/*.log
+
 # Files from Forge MDK
 forge*changelog.txt

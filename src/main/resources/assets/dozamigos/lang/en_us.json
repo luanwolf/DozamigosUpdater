@@ -32,5 +32,7 @@
   "dozamigos.popup.open": "Open updater",
   "dozamigos.popup.later": "Later",
   "dozamigos.fancymenu.action": "Open Dozamigos Updater",
-  "dozamigos.fancymenu.action.desc": "Opens the Dozamigos updater screen"
+  "dozamigos.fancymenu.action.desc": "Opens the Dozamigos updater screen",
+  "dozamigos.maintenance.title": "Server under maintenance",
+  "dozamigos.maintenance.hint": "Please try again later"
 }

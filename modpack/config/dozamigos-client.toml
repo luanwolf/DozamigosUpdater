@@ -1,10 +1,11 @@
-#URL do manifest JSON do pack. Vazio = default do jar (repo DozamigosUpdater).
+#URL do manifest JSON do pack (raw GitHub, release asset, Pages, etc.).
+#Vazio = usa o default do DozamigosUpdater.
 manifestUrl = "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/dozamigos-manifest.json"
-#Token GitHub opcional (repos privados / rate limit). Deixe vazio se publico.
+#Token GitHub opcional (so precisa se o repo do manifest for privado / rate limit).
 githubToken = ""
 #Checa atualizacoes ao abrir o menu principal e mostra popup se houver mudanca.
 checkOnTitleScreen = true
-#Mostra botao "Verificar atualizacao" acima de Um Jogador (FancyMenu pode esconder; use a action/comando).
+#Mostra botao Dozamigos no Title Screen vanilla (FancyMenu pode esconder; use a action/comando).
 showTitleButton = true
 #Timeout de conexao HTTP em ms.
 #Range: 1000 ~ 120000
@@ -12,3 +13,4 @@ connectTimeoutMs = 15000
 #Timeout de leitura HTTP em ms.
 #Range: 1000 ~ 600000
 readTimeoutMs = 120000
+

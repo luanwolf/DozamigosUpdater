@@ -108,6 +108,28 @@ public final class UpdateDiffSelfCheck {
             throw new AssertionError("journeymap config id: expected jm-cfg got " + jmPlan.changes().get(0).id());
         }
 
+        // jar orfao com mesmo id (dozamigos-1.0.8 ao lado de 1.0.11) vira REMOVED
+        Path orphanMods = tmp.resolve("orphan-mods");
+        Files.createDirectories(orphanMods);
+        Files.write(orphanMods.resolve("dozamigos-1.0.11.jar"), "new".getBytes(StandardCharsets.UTF_8));
+        Files.write(orphanMods.resolve("dozamigos-1.0.8.jar"), "old".getBytes(StandardCharsets.UTF_8));
+        Files.write(orphanMods.resolve("dozamigosguide-1.0.0.jar"), "guide".getBytes(StandardCharsets.UTF_8));
+        PackManifest orphanManifest = new PackManifest();
+        orphanManifest.packVersion = "6.0.0";
+        orphanManifest.mods = List.of(
+                mod("dozamigos", "dozamigos-1.0.11.jar", sha(orphanMods.resolve("dozamigos-1.0.11.jar")), "http://x/dz"),
+                mod("dozamigosguide", "dozamigosguide-1.0.0.jar", sha(orphanMods.resolve("dozamigosguide-1.0.0.jar")), "http://x/g")
+        );
+        orphanManifest.files = List.of();
+        UpdatePlan orphanPlan = UpdateDiff.compute(orphanManifest, Map.of(), Map.of(), orphanMods, tmp);
+        assertEq(1L, orphanPlan.count(ChangeKind.REMOVED, FileKind.MOD), "orphan jar removed");
+        assertEq(1L, orphanPlan.changes().stream()
+                .filter(c -> "dozamigos-1.0.8.jar".equals(c.oldFile()))
+                .count(), "orphan file is 1.0.8");
+        assertEq(0L, orphanPlan.changes().stream()
+                .filter(c -> c.oldFile() != null && c.oldFile().startsWith("dozamigosguide"))
+                .count(), "guide kept");
+
         System.out.println("UpdateDiffSelfCheck OK");
     }
 

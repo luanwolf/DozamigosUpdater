@@ -10,7 +10,7 @@ Baixa o `dozamigos-manifest.json` de um repositorio GitHub (ou qualquer URL HTTP
 gradlew.bat build
 ```
 
-Jar em `build/libs/dozamigos-1.0.6.jar` — copie para a pasta `mods` da instance.
+Jar em `build/libs/dozamigos-1.0.11.jar` — copie para a pasta `mods` da instance.
 
 Resource packs e shader packs do jogador **nao sao removidos** pelo updater (so ADDED/UPDATED do pack).
 
@@ -38,6 +38,14 @@ O botao vanilla do title screen e opcional (`showTitleButton`) e pode ser escond
 
 Com `checkOnTitleScreen = true` e `manifestUrl` preenchido, ao abrir o menu principal o mod checa o manifest e abre um popup se houver mudancas.
 
+## Manutenção do servidor
+
+Com `showMaintenanceBanner = true`, o probe (Server List Ping) roda no menu. TCP sozinho não basta — o túnel Playit aceita connect com o MC offline.
+
+**FancyMenu:** o aviso é um elemento de texto no layout (`dozamigos.txt`), editável no editor. Visibilidade = loading requirement `Dozamigos: servidor em manutencao`. Texto = placeholder `dozamigos_maint_text` (pulso de cor). Arraste/redimensione no editor como qualquer outro elemento.
+
+**Sem FancyMenu:** banner vanilla à direita dos botões, com pulso leve (só desenho, sem widget).
+
 ## Aplicar updates
 
 Na tela do atualizador: **Verificar** → revise a lista colorida → **Aplicar** → **reinicie o Minecraft** (jars novos so carregam no boot).
@@ -49,7 +57,7 @@ A arvore publicada fica em `modpack/`. O JSON na raiz (`dozamigos-manifest.json`
 ```powershell
 .\tools\generate-manifest.ps1 `
   -GameDir ".\modpack" `
-  -PackVersion "1.0.0" `
+  -PackVersion "1.0.8" `
   -ReleaseBase "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack/mods" `
   -FilesUrlBase "https://raw.githubusercontent.com/luanwolf/DozamigosUpdater/main/modpack" `
   -OutFile ".\dozamigos-manifest.json"

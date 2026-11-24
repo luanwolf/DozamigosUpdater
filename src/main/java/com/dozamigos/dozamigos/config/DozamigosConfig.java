@@ -26,6 +26,24 @@ public final class DozamigosConfig {
             .comment("Mostra botao Dozamigos no Title Screen vanilla (FancyMenu pode esconder; use a action/comando).")
             .define("showTitleButton", true);
 
+    public static final ForgeConfigSpec.BooleanValue SHOW_MAINTENANCE = BUILDER
+            .comment("Aviso de manutencao a direita do menu quando o servidor estiver offline (Title + FancyMenu).")
+            .define("showMaintenanceBanner", true);
+
+    public static final ForgeConfigSpec.ConfigValue<String> SERVER_ADDRESSES = BUILDER
+            .comment(
+                    "Enderecos host:porta separados por virgula. ONLINE se qualquer um responder.",
+                    "Default: signaling-usability.tun.ply.gg:25565,131.72.108.139:25565")
+            .define("serverAddresses", "signaling-usability.tun.ply.gg:25565,131.72.108.139:25565");
+
+    public static final ForgeConfigSpec.IntValue SERVER_PROBE_INTERVAL_SEC = BUILDER
+            .comment("Intervalo entre probes do servidor (segundos).")
+            .defineInRange("serverProbeIntervalSec", 30, 5, 600);
+
+    public static final ForgeConfigSpec.IntValue SERVER_PROBE_TIMEOUT_MS = BUILDER
+            .comment("Timeout TCP do probe do servidor em ms.")
+            .defineInRange("serverProbeTimeoutMs", 2500, 500, 15000);
+
     public static final ForgeConfigSpec.IntValue CONNECT_TIMEOUT_MS = BUILDER
             .comment("Timeout de conexao HTTP em ms.")
             .defineInRange("connectTimeoutMs", 15000, 1000, 120000);

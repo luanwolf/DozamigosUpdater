@@ -1,6 +1,5 @@
 # Um padrao por linha (wildcard). Arquivos que casarem NAO entram no manifest.
 
-dozamigos-*.jar
 tempadwithshaders-*-1.0.0.jar
 *.jar.disabled
 *.disabled

@@ -32,5 +32,7 @@
   "dozamigos.popup.open": "Abrir atualizador",
   "dozamigos.popup.later": "Depois",
   "dozamigos.fancymenu.action": "Abrir Atualizador Dozamigos",
-  "dozamigos.fancymenu.action.desc": "Abre a tela do atualizador do Dozamigos"
+  "dozamigos.fancymenu.action.desc": "Abre a tela do atualizador do Dozamigos",
+  "dozamigos.maintenance.title": "Servidor em manutenção",
+  "dozamigos.maintenance.hint": "Tente novamente mais tarde"
 }

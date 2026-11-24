@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -224,7 +225,7 @@ public final class UpdateService {
                     throw new IOException("SHA-256 nao confere para " + change.newFile());
                 }
                 if (change.oldFile() != null && !change.oldFile().equals(change.newFile())) {
-                    Files.deleteIfExists(mods.resolve(change.oldFile()));
+                    deleteOrDisable(mods.resolve(change.oldFile()));
                 }
                 managed.putMod(change.id(), change.newFile());
             }
@@ -233,11 +234,32 @@ public final class UpdateService {
                     progress.accept("Removendo mod " + change.oldFile());
                 }
                 if (change.oldFile() != null) {
-                    Files.deleteIfExists(mods.resolve(change.oldFile()));
+                    deleteOrDisable(mods.resolve(change.oldFile()));
                 }
-                managed.removeMod(change.id());
+                // Orfaos reusam o id do mod ativo — so limpa o managed se era exatamente este arquivo.
+                String owned = managed.mods().get(change.id());
+                if (owned != null && owned.equals(change.oldFile())) {
+                    managed.removeMod(change.id());
+                }
             }
         }
+    }
+
+    /** Apaga jar; se estiver travado (Windows + jar em uso), renomeia para .disabled. */
+    static void deleteOrDisable(Path path) throws IOException {
+        if (path == null || !Files.exists(path)) {
+            return;
+        }
+        try {
+            Files.deleteIfExists(path);
+            if (!Files.exists(path)) {
+                return;
+            }
+        } catch (IOException ignored) {
+            // fall through to disable
+        }
+        Path disabled = path.resolveSibling(path.getFileName().toString() + ".disabled");
+        Files.move(path, disabled, StandardCopyOption.REPLACE_EXISTING);
     }
 
     private static void applyPackFile(ModChange change, ManagedState managed, Path game, Consumer<String> progress) throws Exception {

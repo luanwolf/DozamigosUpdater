@@ -1,5 +1,5 @@
 #List of slots to create or modify.
 #See documentation for syntax: https://docs.illusivesoulworks.com/curios/configuration#slot-configuration
 #
-slots = []
+slots = ["id=elytra;size=1;order=40;icon=curios:slot/empty_back_slot"]
 

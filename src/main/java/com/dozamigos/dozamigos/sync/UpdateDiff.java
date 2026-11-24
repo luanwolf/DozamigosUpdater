@@ -1,12 +1,15 @@
 package com.dozamigos.dozamigos.sync;
 
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BiConsumer;
 
 /**
@@ -161,6 +164,31 @@ public final class UpdateDiff {
         for (Map.Entry<String, String> e : ownedCopy.entrySet()) {
             if (!remote.containsKey(e.getKey())) {
                 changes.add(ModChange.removedMod(e.getKey(), e.getValue()));
+            }
+        }
+
+        // Jars orfaos com o mesmo id (ex.: dozamigos-1.0.8.jar apos subir 1.0.11), mesmo fora do managed.
+        Set<String> pendingDelete = new HashSet<>();
+        for (ModChange c : changes) {
+            if (c.target() == FileKind.MOD && c.oldFile() != null) {
+                pendingDelete.add(c.oldFile());
+            }
+        }
+        if (Files.isDirectory(modsDir)) {
+            for (Map.Entry<String, ModEntry> e : remote.entrySet()) {
+                String id = e.getKey();
+                String keep = e.getValue().file;
+                String prefix = id + "-";
+                try (DirectoryStream<Path> jars = Files.newDirectoryStream(modsDir, "*.jar")) {
+                    for (Path jar : jars) {
+                        String name = jar.getFileName().toString();
+                        if (name.equals(keep) || !name.startsWith(prefix) || pendingDelete.contains(name)) {
+                            continue;
+                        }
+                        changes.add(ModChange.removedMod(id, name));
+                        pendingDelete.add(name);
+                    }
+                }
             }
         }
         return changes;
