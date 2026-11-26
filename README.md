@@ -7,9 +7,9 @@
 
 # Dozamigos Updater
 
-Atualizador de modpack **client-side** pra Minecraft **1.20.1** / Forge **47.1.47**.
+Atualizador de modpack client-side pra Minecraft **1.20.1** / Forge **47.1.47**.
 
-Baixa o `dozamigos-manifest.json` de um repositório GitHub (ou qualquer URL HTTPS), compara com a pasta `mods/` e mostra o que foi **adicionado**, **atualizado** ou **removido**.
+Baixa o `dozamigos-manifest.json` de um repositório GitHub (ou qualquer URL HTTPS), compara com a pasta `mods/` e mostra o que foi adicionado, atualizado ou removido.
 
 ## Build
 
@@ -17,9 +17,9 @@ Baixa o `dozamigos-manifest.json` de um repositório GitHub (ou qualquer URL HTT
 gradlew.bat build
 ```
 
-Jar em `build/libs/dozamigos-1.0.12.jar` — copia pra pasta `mods` da instance.
+Jar em `build/libs/dozamigos-1.0.12.jar`. Copia pra pasta `mods` da instance.
 
-Resource packs e shader packs do jogador **não são removidos** pelo updater (só ADDED/UPDATED do pack).
+Resource packs e shader packs do jogador não são removidos (só ADDED/UPDATED do pack).
 
 ## Config
 
@@ -37,9 +37,9 @@ showTitleButton = true
 No botão do menu custom:
 
 1. **Open Screen or Custom GUI** → `com.dozamigos.dozamigos.client.gui.UpdaterScreen`
-2. ou execute o comando cliente `/dozamigos`
+2. ou o comando cliente `/dozamigos`
 
-O botão vanilla do title screen é opcional (`showTitleButton`) e pode ser escondido pelo FancyMenu — o FQCN / comando são o caminho certo.
+O botão vanilla do title screen é opcional (`showTitleButton`) e dá pra esconder no FancyMenu. FQCN / comando são o caminho certo.
 
 ## Popup
 
@@ -47,7 +47,7 @@ Com `checkOnTitleScreen = true` e `manifestUrl` preenchido, ao abrir o menu prin
 
 ## Manutenção do servidor
 
-Com `showMaintenanceBanner = true`, o probe (Server List Ping) roda no menu. TCP sozinho não basta — o túnel Playit aceita connect com o MC offline.
+Com `showMaintenanceBanner = true`, o probe (Server List Ping) roda no menu. TCP sozinho não basta: o túnel Playit aceita connect com o MC offline.
 
 **FancyMenu:** o aviso é um elemento de texto no layout (`dozamigos.txt`), editável no editor. Visibilidade = loading requirement `Dozamigos: servidor em manutencao`. Texto = placeholder `dozamigos_maint_text` (pulso de cor). Arrasta/redimensiona no editor como qualquer outro elemento.
 
@@ -55,7 +55,7 @@ Com `showMaintenanceBanner = true`, o probe (Server List Ping) roda no menu. TCP
 
 ## Aplicar updates
 
-Na tela do atualizador: **Verificar** → revisa a lista colorida → **Aplicar** → **reinicia o Minecraft** (jars novos só carregam no boot).
+Na tela do atualizador: **Verificar** → revisa a lista colorida → **Aplicar** → reinicia o Minecraft (jars novos só carregam no boot).
 
 ## Gerar o manifest
 
